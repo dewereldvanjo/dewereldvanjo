@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Je Bent Niet Zwak. Je Bent Je Kracht Vergeten. — Met liefde van Jo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:     #06080F;
+    --bg2:    #0B0F1C;
+    --gold:   #C9A84C;
+    --gold2:  #EDD06A;
+    --cream:  #E8EDF5;
+    --blue:   #3A6A92;
+    --blue2:  #7AAFD4;
+    --muted:  #8898B8;
+    --dim:    #4A5870;
+    --accent: #101828;
+    --danger: #C94C4C;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--muted);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1000; opacity: 0.35;
+  }
+
+  /* ── STICKY SOCIAL TOAST (via JS) ── */
+
+  /* ── STARS ── */
+  .stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .star {
+    position: absolute; border-radius: 50%; background: var(--blue2);
+    animation: twinkle var(--dur,3s) ease-in-out infinite;
+    animation-delay: var(--delay,0s);
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: var(--min-op,0.2); transform: scale(1); }
+    50%     { opacity: var(--max-op,0.7); transform: scale(1.4); }
+  }
+
+  /* ── EAGLE ANIMATIONS ── */
+  /* ── LAYOUT ── */
+  .page { position: relative; z-index: 1; padding-top: 0; }
+  section { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center; padding: 5rem 2rem 3rem; position: relative;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(20,50,120,0.30) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .eagle-wrap { display: flex; justify-content: center; align-items: center; margin: 0 auto 2.5rem; height: 200px; }
+
+  .gold-rule { width: 120px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); margin: 0 auto 2.5rem; opacity: 0.6; }
+  .gold-rule.wide  { width: 200px; }
+  .gold-rule.full  { width: 100%; max-width: 400px; }
+
+  .pre-headline {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--blue2); letter-spacing: 0.08em;
+    margin-bottom: 1.2rem; opacity: 0.9;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.8rem); color: var(--cream);
+    line-height: 1.15; margin-bottom: 0.4rem;
+  }
+  h1 em { color: var(--blue2); font-style: italic; }
+  .subheadline {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.1rem,3vw,1.4rem); color: var(--muted);
+    margin: 1.4rem auto 0; max-width: 560px; line-height: 1.6;
+  }
+
+  /* ── SOCIAL PROOF BAR (below hero) ── */
+  .proof-bar {
+    display: flex; justify-content: center; align-items: center;
+    gap: 2rem; flex-wrap: wrap;
+    padding: 1.4rem 2rem;
+    border-top: 1px solid rgba(201,168,76,0.10);
+    border-bottom: 1px solid rgba(201,168,76,0.10);
+    background: rgba(11,15,28,0.6);
+    max-width: 720px; margin: 0 auto;
+  }
+  .proof-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.28em; color: var(--muted); text-transform: uppercase;
+  }
+  .proof-item .num {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    color: var(--gold); font-weight: 600; letter-spacing: 0;
+  }
+  .proof-sep { color: var(--dim); opacity: 0.4; font-size: 0.8rem; }
+
+  /* ── SECTIONS ── */
+  .herkenning {
+    background: linear-gradient(180deg,transparent,rgba(10,20,50,0.55),transparent);
+    border-top: 1px solid rgba(74,127,165,0.14);
+    border-bottom: 1px solid rgba(74,127,165,0.14);
+  }
+  .section-kicker {
+    font-family: 'Cinzel', serif; font-size: 0.65rem;
+    letter-spacing: 0.45em; color: var(--gold); opacity: 0.7;
+    text-transform: uppercase; margin-bottom: 1.2rem;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(1.6rem,4vw,2.4rem); color: var(--cream);
+    line-height: 1.25; margin-bottom: 1.8rem;
+  }
+  h2 em { color: var(--blue2); font-style: italic; }
+  p { margin-bottom: 1.2rem; color: var(--muted); }
+  p em { color: var(--cream); font-style: italic; }
+  p strong { color: var(--cream); font-weight: 600; }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.15rem,3vw,1.5rem); color: var(--blue2);
+    text-align: center; line-height: 1.5;
+    padding: 2rem 1.5rem; margin: 2rem 0;
+    border-top: 1px solid rgba(122,175,212,0.20);
+    border-bottom: 1px solid rgba(122,175,212,0.20);
+    position: relative;
+  }
+  .pullquote::before { content:'❧'; display:block; color:var(--gold); font-size:1.2rem; margin-bottom:0.8rem; opacity:0.6; }
+  .gold-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.1rem,2.5vw,1.35rem); color: var(--gold);
+    text-align: center; padding: 1.5rem; margin: 2rem 0;
+    border-left: 2px solid rgba(201,168,76,0.3);
+    border-right: 2px solid rgba(201,168,76,0.3);
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list { list-style: none; margin: 2rem 0; }
+  .check-list li {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 0.9rem 0; border-bottom: 1px solid rgba(201,168,76,0.08);
+    color: var(--muted); font-size: 1.05rem;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before { content:'→'; color:var(--blue2); font-size:1rem; flex-shrink:0; margin-top:0.1rem; opacity:0.8; }
+
+  /* ── WAT LIJST ── */
+  .wat-lijst { list-style: none; margin: 2rem 0; }
+  .wat-lijst li {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 0; border-bottom: 1px solid rgba(201,168,76,0.10);
+    color: var(--muted);
+  }
+  .wat-lijst li:last-child { border-bottom: none; }
+  .wat-dot { width:6px; height:6px; background:var(--blue2); border-radius:50%; flex-shrink:0; margin-top:0.6rem; opacity:0.8; }
+  .wat-lijst strong { color: var(--cream); display:block; font-size:1.05rem; margin-bottom:0.2rem; }
+
+  /* ── VALUE STACK ── */
+  .value-stack {
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(11,15,28,0.7);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .value-stack-title {
+    font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.4em; color: var(--gold); opacity: 0.7;
+    text-transform: uppercase; margin-bottom: 1.5rem; text-align: center;
+  }
+  .value-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.7rem 0; border-bottom: 1px solid rgba(201,168,76,0.07);
+    gap: 1rem;
+  }
+  .value-row:last-child { border-bottom: none; }
+  .value-label { font-family:'EB Garamond',serif; color: var(--muted); font-size: 1rem; }
+  .value-price { font-family:'Cormorant Garamond',serif; color:var(--dim); font-size:1rem; text-decoration:line-through; white-space:nowrap; }
+  .value-total-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 0 0;  margin-top: 0.5rem;
+    border-top: 1px solid rgba(201,168,76,0.25);
+  }
+  .value-total-label { font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; }
+  .value-total-price { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--cream); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonial-block {
+    background: rgba(122,175,212,0.05);
+    border: 1px solid rgba(122,175,212,0.15);
+    border-left: 3px solid rgba(122,175,212,0.45);
+    padding: 2rem 2rem 2rem 2.5rem; margin: 2.5rem 0; position: relative;
+  }
+  .testimonial-block::before {
+    content:'\201C'; position:absolute; top:-0.6rem; left:1.2rem;
+    font-family:'Cormorant Garamond',serif; font-size:4rem;
+    color:var(--blue2); opacity:0.22; line-height:1;
+  }
+  .testimonial-text { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem,2.5vw,1.3rem); color:var(--cream); line-height:1.6; margin-bottom:0.8rem; }
+  .testimonial-attr { font-size:0.82rem; color:var(--blue2); letter-spacing:0.08em; opacity:0.8; }
+
+  /* ── TESTIMONIAL GRID ── */
+  .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+  @media(max-width:560px){ .testi-grid { grid-template-columns: 1fr; } }
+  .testi-card {
+    background: rgba(11,15,28,0.8); border: 1px solid rgba(201,168,76,0.10);
+    padding: 1.4rem; position: relative;
+  }
+  .testi-card::before { content:'\201C'; position:absolute; top:-0.3rem; left:1rem; font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--gold); opacity:0.18; line-height:1; }
+  .testi-card p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--muted); margin-bottom:0.6rem; line-height:1.55; }
+  .testi-card .attr { font-size:0.75rem; color:var(--gold); opacity:0.7; letter-spacing:0.06em; }
+  .stars-row { color: var(--gold); font-size:0.75rem; letter-spacing:0.12em; margin-bottom:0.5rem; opacity:0.85; }
+
+  /* ── AUTEUR ── */
+  .auteur-block {
+    background: rgba(30,15,35,0.4); border: 1px solid rgba(201,168,76,0.12);
+    padding: 2.5rem; margin: 2rem 0; position: relative;
+  }
+  .auteur-block::before { content:''; position:absolute; top:0; left:0; width:40px; height:1px; background:var(--blue2); opacity:0.4; }
+  .auteur-naam { font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.3em; color:var(--gold); margin-bottom:0.8rem; opacity:0.8; }
+
+  /* ── CTA SECTION ── */
+  .cta-section { text-align:center; padding:4rem 2rem 5rem; position:relative; }
+  .cta-section::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 50%, rgba(20,40,110,0.22) 0%, transparent 70%);
+    pointer-events:none;
+  }
+
+  /* ── PRICE + CTA ── */
+  .prijs-badge { display:inline-block; font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; color:var(--gold); opacity:0.7; margin-bottom:1rem; text-transform:uppercase; }
+  .prijs-was { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--dim); text-decoration:line-through; margin-bottom:0.2rem; }
+  .prijs { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,8vw,5rem); font-weight:300; color:var(--cream); line-height:1; margin-bottom:0.4rem; }
+  .prijs sup { font-size:0.4em; vertical-align:top; margin-top:0.4em; color:var(--gold); }
+  .prijs-sub { font-size:0.85rem; color:var(--dim); letter-spacing:0.1em; margin-bottom:2.5rem; }
+  .prijs-saving { display:inline-block; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:var(--gold); font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; padding:0.3rem 1rem; margin-bottom:2rem; }
+
+  /* ── BIG CTA BUTTON ── */
+  .btn-koop {
+    display: inline-block;
+    font-family: 'Cinzel', serif; font-size: 0.82rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--bg); text-decoration: none;
+    background: linear-gradient(135deg, var(--gold2), var(--gold), #A87830);
+    padding: 1.35rem 3.8rem;
+    border: none; cursor: pointer; position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 40px rgba(201,168,76,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .btn-koop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 55px rgba(201,168,76,0.40), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-koop:active { transform: translateY(0); }
+  .btn-koop-sub { display:block; font-size:0.68rem; letter-spacing:0.18em; opacity:0.7; margin-top:0.3rem; font-family:'EB Garamond',serif; font-style:italic; color:inherit; }
+
+  /* ── MICRO-COPY TRUST ── */
+  .trust-icons {
+    display: flex; justify-content: center; align-items: center; gap: 1.8rem;
+    margin-top: 1.4rem; flex-wrap: wrap;
+  }
+  .trust-item { display:flex; align-items:center; gap:0.45rem; font-size:0.75rem; color:var(--dim); letter-spacing:0.05em; }
+  .trust-item svg { opacity:0.5; flex-shrink:0; }
+
+  /* ── GARANTIE ── */
+  .garantie {
+    display:flex; align-items:flex-start; gap:1rem;
+    background:rgba(201,168,76,0.04); border:1px solid rgba(201,168,76,0.12);
+    padding:1.5rem; margin:2.5rem 0; text-align:left;
+  }
+  .garantie-icon { font-size:1.5rem; flex-shrink:0; opacity:0.7; }
+  .garantie p { margin:0; font-size:0.9rem; line-height:1.6; color:var(--dim); }
+  .garantie strong { color:var(--gold); display:block; margin-bottom:0.2rem; }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid rgba(201,168,76,0.09); }
+  .faq-q {
+    width:100%; background:none; border:none; cursor:pointer; text-align:left;
+    padding:1.2rem 0; display:flex; justify-content:space-between; align-items:center;
+    font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--cream);
+    letter-spacing:0.02em; gap:1rem;
+  }
+  .faq-q .chevron { color:var(--gold); opacity:0.6; transition:transform 0.3s; flex-shrink:0; font-size:0.9rem; }
+  .faq-q.open .chevron { transform:rotate(180deg); }
+  .faq-a {
+    max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.4s ease;
+    font-size:0.95rem; color:var(--muted); line-height:1.7;
+  }
+  .faq-a.open { max-height:300px; padding-bottom:1.2rem; }
+
+  /* ── FOOTER ── */
+  footer { text-align:center; padding:3rem 2rem; border-top:1px solid rgba(201,168,76,0.08); }
+  footer p { font-size:0.78rem; color:var(--dim); line-height:1.8; }
+  footer a { color:var(--dim); text-decoration:underline; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  .ornament { text-align:center; color:var(--gold); opacity:0.4; font-size:1.1rem; letter-spacing:0.8em; margin:0.5rem 0; }
+
+  /* ── STICKY BOTTOM CTA (mobile) ── */
+  .sticky-cta {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(0deg, rgba(6,8,15,0.98) 60%, transparent);
+    padding: 1.2rem 1.5rem 1.5rem;
+    display: none; z-index: 490;
+    text-align: center;
+  }
+  .sticky-cta .btn-koop { width:100%; max-width:400px; font-size:0.75rem; padding:1.1rem 2rem; display:block; margin:0 auto; }
+  @media(max-width:640px){ .sticky-cta { display: block; } }
+
+  @media(max-width:600px){
+    section { padding:3rem 1.4rem; }
+    .auteur-block { padding:1.8rem 1.4rem; }
+    .btn-koop { padding:1.1rem 2.5rem; }
+    .garantie { flex-direction:column; gap:0.5rem; }
+    .proof-bar { gap:1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SOCIAL TOAST ══ -->
+<div id="socialToast" style="
+  position:fixed; bottom:5rem; left:1.2rem; z-index:600;
+  background:rgba(11,15,28,0.96); border:1px solid rgba(201,168,76,0.20);
+  border-left:3px solid rgba(201,168,76,0.6);
+  padding:0.85rem 1.1rem; max-width:280px;
+  backdrop-filter:blur(10px);
+  transform:translateX(-120%); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events:none;
+">
+  <div style="display:flex;align-items:center;gap:0.7rem;">
+    <div id="toastAvatar" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:0.75rem;color:var(--bg);font-weight:600;flex-shrink:0;"></div>
+    <div>
+      <div id="toastText" style="font-family:'EB Garamond',serif;font-size:0.88rem;color:var(--cream);line-height:1.4;"></div>
+      <div id="toastTime" style="font-size:0.7rem;color:var(--dim);margin-top:0.2rem;letter-spacing:0.04em;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="stars" id="stars"></div>
+
+<div class="page">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero reveal">
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--blue2); font-size:clamp(1.1rem,3vw,1.5rem); letter-spacing:0.15em; margin-bottom:2.5rem;">Met liefde van Jo</div>
+    <div class="gold-rule wide"></div>
+
+    <!-- Eagle animation -->
+    <!-- Adelaarsveer + innerlijk vuur -->
+    <div class="eagle-wrap" style="height:330px; flex-direction:column; gap:0; align-items:center;">
+      <canvas id="heroFeather" width="320" height="88" style="display:block;"></canvas>
+      <canvas id="heroFlame"   width="420" height="240" style="display:block;margin-top:-2px;"></canvas>
+    </div>
+
+    <p class="pre-headline">Voor wie weet dat er meer in zit —<br/>maar niet begrijpt waarom dat meer er nog niet uitkomt.</p>
+    <h1>Je Bent Niet Zwak.<br/><em>Je Bent Je Kracht Vergeten.</em></h1>
+    <p class="subheadline">Een compleet identiteitssysteem voor wie klaar is om de standaard structureel te verhogen — voor altijd.</p>
+    <div class="gold-rule full" style="margin-top:2.5rem;"></div>
+  </section>
+
+  <!-- ══ SOCIAL PROOF BAR ══ -->
+  <div class="proof-bar reveal">
+    <div class="proof-item"><span class="num" id="readerCount">1.247</span><span>lezers</span></div>
+    <span class="proof-sep">·</span>
+    <div class="proof-item"><span class="num">★ 4.9</span><span>beoordeling</span></div>
+    <span class="proof-sep">·</span>
+    <div class="proof-item"><span class="num">24u</span><span>levertijd</span></div>
+    <span class="proof-sep">·</span>
+    <div class="proof-item"><span class="num">€15,15</span><span>eenmalig</span></div>
+  </div>
+
+  <!-- ══ HERKENNING ══ -->
+  <section class="herkenning reveal">
+    <p class="section-kicker">Herken jij dit?</p>
+    <h2>Je weet wat je moet doen.<br/><em>En toch doe je het niet.</em></h2>
+
+    <p>Je hebt de video's gekeken. De boeken gelezen. De podcasts gedraaid. Je weet wat discipline is, je weet wat groei vraagt, je weet wat er nodig is.</p>
+    <p><em>En toch. Je stelt het uit. Je valt terug. Je begint opnieuw. En je vraagt jezelf af waarom het jou niet lukt terwijl het anderen wel lukt.</em></p>
+
+    <ul class="check-list">
+      <li>Je begint vol enthousiasme en valt na een paar weken terug in exact hetzelfde patroon</li>
+      <li>Je voelt dat er meer in je zit, maar iets houdt je steeds tegen — alsof je een onzichtbaar plafond hebt</li>
+      <li>Je zegt ja terwijl je nee bedoelt, je stelt grenzen niet en achteraf haat je jezelf daarvoor</li>
+      <li>Je weet dat je omgeving je niet vooruithelpt, maar je weet niet hoe je daar iets aan verandert</li>
+      <li>Motivatie schiet omhoog na een goed filmpje — maar verdwijnt binnen 48 uur weer volledig</li>
+      <li>Je vraagt je af of er iets mis is met jou, terwijl je diep vanbinnen weet dat dat niet zo is</li>
+    </ul>
+
+    <div class="pullquote">
+      Er is niets mis met jou.<br/>
+      Je identiteit is alleen kleiner<br/>
+      dan je potentieel.
+    </div>
+  </section>
+
+  <!-- ══ DE WAARHEID ══ -->
+  <section class="reveal">
+    <p class="section-kicker">De waarheid</p>
+    <h2>Het is geen gebrek aan wilskracht.<br/><em>Het is je identiteit.</em></h2>
+
+    <p>Niet als verwijt — als bevrijding.</p>
+    <p>De meeste mensen proberen hun gedrag te veranderen. Ze werken aan gewoontes, routines, discipline. Ze downloaden apps, maken planners, zetten wekkers. En het werkt — tijdelijk.</p>
+    <p>Maar het brein werkt niet zo. <strong>Je brein stuurt je niet naar wat je wilt. Het stuurt je naar wat jij gelooft dat bij jou hoort.</strong> Naar je interne standaard. Naar wie jij diep van binnen denkt dat je bent.</p>
+    <p>En zo lang die standaard laag is — zo lang jij onbewust gelooft dat succes, vrijheid of kracht "voor andere mensen" is — zal je brein alles saboteren wat dat tegenspreekt. Niet omdat je zwak bent. Maar omdat je geprogrammeerd bent.</p>
+
+    <div class="gold-quote">
+      "Je kunt niet structureel boven<br/>
+      je interne definitie leven.<br/>
+      Niet voor lang. Niet zonder terugval."
+    </div>
+
+    <p>Dit boek gaat die definitie herschrijven. Niet met motivatie. Niet met een 30-dagen challenge. <strong>Met een fundamentele verschuiving in wie jij bent.</strong></p>
+    <p>En die verschuiving begint op de dag dat jij beslist: dit is de laatste keer dat ik terugval.</p>
+  </section>
+
+  <!-- ══ TESTIMONIAL 1 (dynamisch) ══ -->
+  <section class="reveal" style="padding-top:0; padding-bottom:2rem;">
+    <div class="testimonial-block" id="dynamicTestimonial">
+      <p class="testimonial-text" id="dynText"></p>
+      <p class="testimonial-attr" id="dynAttr"></p>
+    </div>
+  </section>
+
+  <!-- ══ WAT JE KRIJGT ══ -->
+  <section class="reveal" style="background: linear-gradient(180deg,transparent,rgba(20,10,30,0.4),transparent); border-top:1px solid rgba(201,168,76,0.08); border-bottom:1px solid rgba(201,168,76,0.08);">
+    <p class="section-kicker">Wat je krijgt</p>
+    <h2>Tien hoofdstukken.<br/><em>Één identiteitsreset.</em></h2>
+
+    <ul class="wat-lijst">
+      <li><div class="wat-dot"></div><div><strong>Identiteits Assessment</strong>Bepaal je exacte startpunt — gescoord en gepersonaliseerd — zodat je weet waar je staat voor je begint.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Je Bent Niet Geconditioneerd Om Klein Te Blijven</strong>Waarom motivatie je niet redt en wat het werkelijke probleem is — en waarom dat het beste nieuws is dat je ooit krijgt.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Wat Je Werkelijk Stuurt</strong>Het mechanisme van zelfbeeld, interne standaard en sabotage — en hoe je het systeem omkeert.</div></li>
+      <li><div class="wat-dot"></div><div><strong>De Identiteitswet</strong>Waarom je nooit uitstijgt boven je interne definitie — en de drie stappen om die definitie permanent te herschrijven.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Patronen: De Onzichtbare Programma's</strong>Hoe onderbewuste patronen je gedrag sturen — en de 3-stappen patroononderbreking die je leven verandert.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Liefde & Identiteit</strong>Hoe jouw zelfbeeld bepaalt welke verbindingen je aantrekt — en hoe je de frequentie uitzend van wie je werkelijk bent.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Het 7-Dagen Identiteitsprotocol</strong>Concrete dagelijkse uitvoering — geen motivatie nodig, geen uitzonderingen. Dag voor dag, stap voor stap.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Het 30-Dagen Continuatiesysteem</strong>Week voor week verankering van je nieuwe standaard — zodat dit niet tijdelijk is, maar permanent.</div></li>
+      <li><div class="wat-dot"></div><div><strong>13 Wetten van Onvermijdelijke Groei</strong>Geen meningen. Geen theorie. Regels die werken — ongeacht je situatie, achtergrond of startpunt.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Referentiekaart & Mentale Handtekening</strong>Jouw persoonlijk naslagwerk voor dagelijks gebruik — zodat de nieuwe standaard altijd binnen handbereik is.</div></li>
+    </ul>
+
+    <!-- VALUE STACK -->
+    <div class="value-stack">
+      <div class="value-stack-title">Totale waarde van dit pakket</div>
+      <div class="value-row">
+        <span class="value-label">10-hoofdstukken identiteitssysteem (PDF)</span>
+        <span class="value-price">€ 47</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">7-Dagen Protocol + dagelijkse uitvoeringskaart</span>
+        <span class="value-price">€ 27</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">13 Wetten referentiekaart (printbaar)</span>
+        <span class="value-price">€ 17</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Identiteits Assessment (gepersonaliseerd)</span>
+        <span class="value-price">€ 19</span>
+      </div>
+      <div class="value-total-row">
+        <span class="value-total-label">Jij betaalt vandaag</span>
+        <span class="value-total-price" style="color:var(--gold2);">€ 15,15</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VOOR WIE ══ -->
+  <section class="reveal">
+    <p class="section-kicker">Voor wie</p>
+    <h2>Dit boek is voor jou als<br/><em>je klaar bent om te stoppen met beginnen.</em></h2>
+
+    <p>Niet voor wie nog één keer gemotiveerd wil worden. Niet voor wie op zoek is naar een quick fix of een inspirerend verhaal voor 48 uur.</p>
+    <p>Dit boek is voor wie <em>echt</em> klaar is. Voor wie begrijpt dat de pijn van blijven wie je bent groter is dan de pijn van veranderen. Voor wie niet meer wil terugvallen — en bereid is daarvoor iets fundamenteels te veranderen.</p>
+    <p>Het systeem in dit boek werkt. Maar alleen als jij beslist dat het voor jou werkt. Dat besluit maakt jij. Vandaag.</p>
+
+    <div class="gold-quote">
+      "Jij bent niet wat je hebt meegemaakt.<br/>
+      Jij bent wat je besluit te zijn."
+    </div>
+  </section>
+
+  <!-- ══ MEER TESTIMONIALS ══ -->
+  <section class="reveal" style="padding-top:0;">
+    <p class="section-kicker">Wat lezers zeggen</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Voor het eerst in jaren voel ik dat ik mezelf echt zie. Niet wie ik probeer te zijn. Wie ik ben."</p>
+        <div class="attr">— Marieke, 34</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Ik dacht dat ik lui was. Nu begrijp ik dat mijn standaard gewoon niet klopte. Dat is veranderd."</p>
+        <div class="attr">— Daan, 28</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Na één avond lezen wist ik: dit is anders. Geen motivatie-praatjes. Gewoon waarheid."</p>
+        <div class="attr">— Sofie, 41</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Het 7-dagen protocol is het eerste systeem dat ik niet na dag drie heb opgegeven. Dat zegt genoeg."</p>
+        <div class="attr">— Rens, 26</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUTEUR ══ -->
+  <section class="reveal">
+    <div class="auteur-block">
+      <p class="auteur-naam" style="color:var(--blue2); font-size:clamp(1.4rem,4vw,2rem); font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.05em;">Met liefde van Jo</p>
+      <p><em>"Ik heb dit boek geschreven omdat ik geloof — met heel mijn hart — dat ieder mens de versie van zichzelf verdient die er altijd al in zat. Niet als beloning voor prestatie. Maar als geboorterecht."</em></p>
+      <div style="height:1rem;"></div>
+      <p>"Dit is geen motivatieboek. Dit is een spiegel. En als je er eerlijk in kijkt, zie je wie je al bent — en wie je altijd al had kunnen zijn. Ik geloof in jou. Nu is het tijd dat jij dat ook doet."</p>
+    </div>
+  </section>
+
+  <!-- ══ TWEEDE PULLQUOTE ══ -->
+  <section class="reveal" style="padding-top:0; padding-bottom:0;">
+    <div class="pullquote">
+      Jij bent niet zwak.<br/>
+      Je bent je kracht vergeten.<br/>
+      <span style="font-size:0.85em; color:var(--dim); font-style:normal;">— Jo</span>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-section reveal" id="ctaSection">
+    <div class="gold-rule wide"></div>
+    <div style="height:2rem;"></div>
+
+    <!-- Swan→Eagle loop animation -->
+    <!-- Adelaarsveer + innerlijk vuur -->
+    <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:1.5rem;">
+      <canvas id="ctaFeather" width="320" height="88" style="display:block;"></canvas>
+      <canvas id="ctaFlame"   width="420" height="240" style="display:block;margin-top:-2px;"></canvas>
+    </div>
+
+    <span class="prijs-badge">Introductieprijs</span>
+    <div class="prijs-was">Normaal € 110 waarde</div>
+    <div class="prijs"><sup>€</sup>15,15</div>
+    <p class="prijs-sub">eenmalig · direct downloadbaar · PDF</p>
+    <div class="prijs-saving">Jij bespaart € 94,85 — 86% korting</div>
+
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem,2.5vw,1.3rem); color:var(--blue2); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      Voor slechts € 15,15 staat jouw<br/>nieuwe identiteit binnen handbereik.
+    </p>
+
+    <a href="https://payment-links.mollie.com/nl/payment/ZKScUdoVLPz4jJFWojnq8/pay" class="btn-koop">
+      Ja, ik herinner mijn kracht
+      <span class="btn-koop-sub">Direct downloaden na betaling · Veilig via Mollie</span>
+    </a>
+
+    <!-- ══ ORDER BUMP ══ -->
+    <div id="orderBump" style="
+      max-width:480px; margin:1.8rem auto 0;
+      border:2px dashed rgba(201,168,76,0.45);
+      background:rgba(11,15,28,0.85);
+      padding:1.6rem 1.8rem;
+      text-align:left;
+      position:relative;
+      cursor:pointer;
+      transition: border-color 0.3s, background 0.3s;
+    " onclick="toggleBump()" onmouseenter="this.style.borderColor='rgba(201,168,76,0.75)'" onmouseleave="this.style.borderColor=document.getElementById('bumpCheck').checked?'rgba(201,168,76,0.75)':'rgba(201,168,76,0.45)'">
+
+      <!-- Tag label -->
+      <div style="
+        position:absolute; top:-1px; left:1.4rem;
+        transform:translateY(-50%);
+        background:linear-gradient(135deg,var(--gold2),var(--gold));
+        color:var(--bg); font-family:'Cinzel',serif;
+        font-size:0.55rem; letter-spacing:0.35em; text-transform:uppercase;
+        padding:0.28rem 0.9rem;
+      ">Ja, voeg toe aan mijn bestelling</div>
+
+      <div style="display:flex; align-items:flex-start; gap:1.1rem;">
+        <!-- Checkbox -->
+        <div id="bumpCheckBox" style="
+          width:22px; height:22px; border:1.5px solid rgba(201,168,76,0.5);
+          border-radius:3px; flex-shrink:0; margin-top:0.15rem;
+          display:flex; align-items:center; justify-content:center;
+          transition:background 0.2s, border-color 0.2s;
+          background:transparent;
+        ">
+          <svg id="bumpTick" width="13" height="13" viewBox="0 0 13 13" fill="none" style="opacity:0;transition:opacity 0.2s;">
+            <polyline points="2,7 5.5,10.5 11,3" stroke="#06080F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <input type="checkbox" id="bumpCheck" style="display:none;" onchange="updateBumpVisual()"/>
+
+        <div style="flex:1;">
+          <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem; opacity:0.8;">Compleet pakket — speciale aanbieding</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(1.1rem,2.5vw,1.3rem); color:var(--cream); line-height:1.3; margin-bottom:0.6rem;">
+            + <em style="color:#D4789A;">Je Ultieme Relatie Manifesteren.</em>
+          </div>
+          <p style="font-size:0.9rem; color:var(--muted); line-height:1.6; margin-bottom:0.9rem;">
+            De complementerende gids die laat zien hoe jouw nieuwe identiteit automatisch de relatie aantrekt die je verdient. Identiteit + liefde: het complete fundament.
+          </p>
+          <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+            <div>
+              <span style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:var(--dim); text-decoration:line-through;">€ 15,15 + € 15,15 = € 30,30</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.3rem;">
+              <span style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; color:var(--gold2); line-height:1;">€ 25,25</span>
+              <span style="font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.2em; color:var(--gold); opacity:0.7; text-transform:uppercase;">totaal</span>
+            </div>
+            <div style="background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:var(--gold); font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; padding:0.25rem 0.7rem;">Bespaar € 5,05</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic price display -->
+    <div id="priceDisplay" style="margin-top:1.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:var(--dim); text-align:center; min-height:1.4rem; transition:opacity 0.3s;"></div>
+
+    <div class="trust-icons">
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Beveiligde betaling
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Direct toegang
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Persoonlijk support
+      </div>
+    </div>
+
+    <div style="height:2rem;"></div>
+
+    <div class="garantie">
+      <div class="garantie-icon">🔥</div>
+      <p>
+        <strong>Jij verdient dit</strong>
+        Dit boek verandert niet hoe je denkt. Het verandert wie je bent. Als je dit leest en toepast, is terugval geen optie meer — want je standaard is voorgoed verhoogd.
+      </p>
+    </div>
+
+    <div style="height:2rem;"></div>
+    <div class="gold-rule full"></div>
+    <div style="height:2rem;"></div>
+    <p style="font-size:0.9rem; color:var(--dim); font-style:italic; max-width:480px; margin:0 auto;">
+      "Identiteit verandert niet in 7 dagen. Het begint in 7 dagen.<br/>In 30 dagen wordt het structureel. In 90 dagen wordt het wie je bent."
+    </p>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="reveal" style="border-top:1px solid rgba(201,168,76,0.08);">
+    <p class="section-kicker">Veelgestelde vragen</p>
+    <h2 style="font-size:clamp(1.4rem,3.5vw,2rem); margin-bottom:2rem;">Alles wat je wilt weten</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is dit weer een motivatieboek? <span class="chevron">▾</span></button>
+      <div class="faq-a">Nee. Motivatieboeken geven je energie voor 48 uur. Dit boek verandert de onderliggende programmering waardoor je terugvalt. Het werkt niet op gevoel — het werkt op identiteit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Hoe snel ontvang ik het boek? <span class="chevron">▾</span></button>
+      <div class="faq-a">Direct na betaling ontvang je een downloadlink via e-mail. Binnen 5 minuten lees je de eerste pagina.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Wat als het niets voor mij is? <span class="chevron">▾</span></button>
+      <div class="faq-a">Dit boek is niet voor iedereen. Als je echt klaar bent om iets fundamenteels te veranderen, werkt het. Als je nog zoekt naar motivatie — wacht dan tot je écht klaar bent. Die beslissing maak jij.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Hoe lang duurt het om het te lezen? <span class="chevron">▾</span></button>
+      <div class="faq-a">De meeste lezers lezen het in 2–3 uur. Het 7-dagen protocol start de volgende dag. De verandering begint direct.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is de betaling veilig? <span class="chevron">▾</span></button>
+      <div class="faq-a">Ja. Betaling verloopt via Mollie — een van de meest vertrouwde betalingsproviders van Nederland. Betalen via Mollie is snel, veilig en vertrouwd.</div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="ornament">· · ·</div>
+    <div style="height:1.5rem;"></div>
+    <p>
+      © 2026 Met liefde van Jo<br/>
+      <span style="font-size:0.72rem; opacity:0.6;">
+        Na betaling ontvang je direct toegang tot de download via e-mail.<br/>
+        Bij vragen: contact via TikTok <a href="https://www.tiktok.com/@jolanda_koen">@jolanda_koen</a>
+      </span>
+    </p>
+  </footer>
+
+</div><!-- .page -->
+
+<!-- ══ STICKY MOBILE CTA ══ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://payment-links.mollie.com/nl/payment/ZKScUdoVLPz4jJFWojnq8/pay" class="btn-koop">Ja, ik herinner mijn kracht — € 15,15</a>
+</div>
+
+<script>
+// ── STARS ──
+const starsEl = document.getElementById('stars');
+[{x:4,y:6,s:1.1,dur:3.2,delay:0},{x:11,y:14,s:0.8,dur:4.1,delay:0.8},{x:19,y:4,s:1.3,dur:2.8,delay:1.5},
+ {x:28,y:9,s:0.9,dur:3.6,delay:0.3},{x:35,y:2,s:1.0,dur:4.5,delay:2.1},{x:44,y:7,s:1.2,dur:3.0,delay:0.6},
+ {x:52,y:3,s:0.7,dur:3.8,delay:1.2},{x:61,y:11,s:1.1,dur:2.6,delay:0.9},{x:70,y:5,s:1.3,dur:4.2,delay:1.8},
+ {x:78,y:8,s:0.8,dur:3.4,delay:0.4},{x:86,y:2,s:1.0,dur:2.9,delay:2.4},{x:93,y:12,s:1.2,dur:3.7,delay:1.0},
+ {x:7,y:25,s:0.9,dur:4.0,delay:1.6},{x:22,y:30,s:1.1,dur:3.3,delay:0.7},{x:48,y:22,s:0.8,dur:2.7,delay:2.0},
+ {x:75,y:28,s:1.2,dur:4.4,delay:0.2},{x:90,y:20,s:1.0,dur:3.1,delay:1.4},{x:3,y:45,s:0.9,dur:3.9,delay:0.5},
+ {x:96,y:50,s:1.1,dur:2.5,delay:1.9},{x:15,y:60,s:0.8,dur:4.3,delay:0.1},{x:82,y:65,s:1.2,dur:3.5,delay:2.2},
+ {x:40,y:75,s:0.7,dur:2.8,delay:1.1},{x:60,y:80,s:1.0,dur:4.1,delay:0.8},{x:25,y:88,s:1.1,dur:3.2,delay:1.7},
+ {x:70,y:92,s:0.9,dur:3.6,delay:0.3}
+].forEach(d => {
+  const el = document.createElement('div');
+  el.className = 'star';
+  el.style.cssText = `left:${d.x}%;top:${d.y}%;width:${d.s*2}px;height:${d.s*2}px;--dur:${d.dur}s;--delay:${d.delay}s;--min-op:0.15;--max-op:0.65;animation-delay:${d.delay}s;`;
+  starsEl.appendChild(el);
+});
+
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+document.querySelector('.hero').classList.add('visible');
+
+// ── ORDER BUMP ──
+const LINK_SINGLE  = 'https://payment-links.mollie.com/nl/payment/ZKScUdoVLPz4jJFWojnq8/pay';          // €15,15 enkel
+const LINK_BUNDLE  = 'https://payment-links.mollie.com/payment/UGi8WKssHDBvLjz3KwBad';   // €25,25 pakket
+
+function toggleBump(){
+  const cb = document.getElementById('bumpCheck');
+  cb.checked = !cb.checked;
+  updateBumpVisual();
+}
+
+function updateBumpVisual(){
+  const cb       = document.getElementById('bumpCheck');
+  const box      = document.getElementById('bumpCheckBox');
+  const tick     = document.getElementById('bumpTick');
+  const display  = document.getElementById('priceDisplay');
+  const bump     = document.getElementById('orderBump');
+  const btns     = document.querySelectorAll('.btn-koop');
+
+  if(cb.checked){
+    box.style.background    = 'linear-gradient(135deg,var(--gold2),var(--gold))';
+    box.style.borderColor   = 'var(--gold)';
+    tick.style.opacity      = '1';
+    bump.style.borderColor  = 'rgba(201,168,76,0.75)';
+    bump.style.background   = 'rgba(50,12,25,0.95)';
+    display.textContent     = '✓ Totaal: € 25,25 — beide boeken · direct downloadbaar';
+    display.style.color     = 'var(--gold)';
+    btns.forEach(b => { b.href = LINK_BUNDLE; b.querySelector('.btn-koop-sub') && (b.querySelector('.btn-koop-sub').textContent = 'Beide boeken · Direct downloaden · Veilig via Mollie'); });
+  } else {
+    box.style.background    = 'transparent';
+    box.style.borderColor   = 'rgba(201,168,76,0.5)';
+    tick.style.opacity      = '0';
+    bump.style.borderColor  = 'rgba(201,168,76,0.45)';
+    bump.style.background   = 'rgba(11,15,28,0.85)';
+    display.textContent     = '';
+    btns.forEach(b => { b.href = LINK_SINGLE; b.querySelector('.btn-koop-sub') && (b.querySelector('.btn-koop-sub').textContent = 'Direct downloaden na betaling · Veilig via Mollie'); });
+  }
+}
+// 75% vrouwen, 25% mannen — allemaal Nederlandse namen
+const toastWomen = [
+  'Marieke','Lisa','Emma','Sanne','Lotte','Fleur','Anouk','Noor','Iris','Vera',
+  'Manon','Silke','Fenna','Hanna','Julie','Elise','Roos','Nathalie','Bo','Amber',
+  'Maud','Laura','Sophie','Lena','Femke','Chantal','Anne','Merel','Carolien','Inge',
+  'Demi','Lieke','Britt','Naomi','Tamara','Cindy','Ellen','Rianne','Wendy','Josine',
+  'Deborah','Miriam','Esther','Anke','Bianca','Nienke','Renate','Maaike','Kim','Eline',
+];
+const toastMen = [
+  'Daan','Rens','Niels','Joost','Bas','Tim','Ruben','Jelle','Koen','Lars',
+  'Rick','Wouter','Bram','Pieter','Max','Thijs','Jasper','Stijn','Luuk','Finn',
+];
+const toastCities = [
+  'Amsterdam','Rotterdam','Utrecht','Den Haag','Eindhoven','Groningen',
+  'Tilburg','Almere','Breda','Nijmegen','Enschede','Haarlem',
+  'Arnhem','Zaandam','Amersfoort','Apeldoorn','\'s-Hertogenbosch','Hoofddorp',
+  'Maastricht','Leiden','Dordrecht','Zoetermeer','Zwolle','Deventer',
+  'Delft','Alkmaar','Leeuwarden','Venlo','Hilversum','Ede',
+  'Heerlen','Purmerend','Roosendaal','Spijkenisse','Gouda','Emmen',
+];
+const toastTimes = [
+  'zojuist','net','1 minuut geleden','2 minuten geleden','3 minuten geleden',
+  '5 minuten geleden','7 minuten geleden','10 minuten geleden','12 minuten geleden',
+  '15 minuten geleden','18 minuten geleden','22 minuten geleden','28 minuten geleden',
+  '35 minuten geleden','42 minuten geleden','51 minuten geleden','1 uur geleden',
+];
+
+const toast    = document.getElementById('socialToast');
+const toastTxt = document.getElementById('toastText');
+const toastTim = document.getElementById('toastTime');
+const toastAv  = document.getElementById('toastAvatar');
+
+// Shuffle helper
+function shuffle(arr){ return [...arr].sort(()=>Math.random()-0.5); }
+
+// Build a 40-entry queue — 75% vrouwen, 25% mannen
+function buildQueue(){
+  const cities = shuffle(toastCities);
+  const times  = shuffle(toastTimes);
+  const pool = [];
+  const sw = shuffle(toastWomen), sm = shuffle(toastMen);
+  for(let i=0; i<40; i++){
+    pool.push((i % 4) !== 3 ? sw[i % sw.length] : sm[i % sm.length]);
+  }
+  return Array.from({length:40}, (_,i) => ({
+    name:    pool[i],
+    city:    cities[i % cities.length],
+    time:    times[i % times.length],
+    initial: pool[i][0],
+  }));
+}
+
+let queue = buildQueue(), qIdx = 0, toastShown = false;
+
+function showToast(){
+  if(qIdx >= queue.length) queue = buildQueue(), qIdx = 0; // refill if needed
+  const d = queue[qIdx++];
+  toastAv.textContent  = d.initial;
+  toastTxt.textContent = `${d.name} uit ${d.city} heeft dit net aangeschaft.`;
+  toastTim.textContent = d.time;
+  toast.style.transform = 'translateX(0)';
+  setTimeout(() => { toast.style.transform = 'translateX(-120%)'; }, 4500);
+}
+
+// Schedule: first after ~15s, then every 40–65s for a full 30 min
+function scheduleNext(delay){
+  setTimeout(() => {
+    showToast();
+    const next = 40000 + Math.random() * 25000; // 40–65s between toasts
+    scheduleNext(next);
+  }, delay);
+}
+
+// Trigger first toast once user has scrolled into the content
+window.addEventListener('scroll', function onFirstScroll(){
+  if(window.scrollY > 300){
+    toastShown = true;
+    window.removeEventListener('scroll', onFirstScroll);
+    setTimeout(() => {
+      showToast();
+      scheduleNext(40000 + Math.random() * 25000);
+    }, 1500);
+  }
+}, { passive: true });
+
+// ── READER COUNT (social proof animation) ──
+let count = 1247;
+setInterval(() => {
+  if(Math.random() < 0.35){ count++; document.getElementById('readerCount').textContent = count.toLocaleString('nl-NL'); }
+}, 8000);
+
+// ── STICKY CTA (hide when real CTA visible) ──
+const stickyCta = document.getElementById('stickyCta');
+const ctaSection = document.getElementById('ctaSection');
+const ctaObs = new IntersectionObserver(entries => {
+  stickyCta.style.display = entries[0].isIntersecting ? 'none' : '';
+}, { threshold: 0.2 });
+ctaObs.observe(ctaSection);
+
+// ── FAQ ──
+function toggleFaq(btn){
+  const ans = btn.nextElementSibling;
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a=>{ a.classList.remove('open'); a.previousElementSibling.classList.remove('open'); });
+  if(!isOpen){ ans.classList.add('open'); btn.classList.add('open'); }
+}
+
+// ── DYNAMISCHE TESTIMONIALS (kracht) ──
+const dynTestimonials = [
+  { text: "Ik ben vandaag anders opgestaan. Rustiger. Zekerder. Iets in mij is verschoven na het lezen.", name: "Marieke", age: 34 },
+  { text: "Ik heb dit boek in één avond gelezen en de volgende ochtend nee gezegd waar ik normaal ja zeg. Zo snel.", name: "Sanne", age: 29 },
+  { text: "De ochtend na het lezen voelde ik me steviger in mijn schoenen. Niet omdat er iets veranderd was — maar omdat ík veranderd was.", name: "Lotte", age: 31 },
+  { text: "Eindelijk begrijp ik waarom ik steeds terugviel. Het was nooit een wilskrachtprobleem. Het was identiteit.", name: "Fleur", age: 38 },
+  { text: "Ik stuurde mijn zus een screenshot van pagina drie. Ze heeft het dezelfde avond nog besteld.", name: "Noor", age: 27 },
+  { text: "Het hoofdstuk over de interne standaard raakte me diep. Ik herkende mezelf op elke regel.", name: "Emma", age: 33 },
+  { text: "Dit is geen motivatieboek. Het is een spiegel. En ik was eindelijk klaar om erin te kijken.", name: "Manon", age: 36 },
+  { text: "Twee uur gelezen. De volgende ochtend voelde ik me anders in gesprekken — steviger, meer mezelf.", name: "Iris", age: 30 },
+  { text: "Ik heb het in één ruk uitgelezen. Halverwege wist ik al: dit is wat ik al die tijd miste.", name: "Vera", age: 42 },
+  { text: "Ik had verwacht dat het weer een boek zou zijn dat je even raakt en dan vergeet. Dit niet. Dit is blijven hangen.", name: "Femke", age: 28 },
+  { text: "De 13 wetten heb ik na het lezen direct uitgeschreven. Ik wilde ze meteen bij me hebben.", name: "Roos", age: 35 },
+  { text: "Voor het eerst stel ik grenzen zonder me achteraf schuldig te voelen. Begon al de avond dat ik het las.", name: "Silke", age: 32 },
+  { text: "Ik dacht dat ik lui was. Na het lezen begreep ik dat mijn standaard gewoon niet klopte. Dat inzicht alleen al.", name: "Amber", age: 26 },
+  { text: "Ik heb dit uitgelezen en daarna meteen het protocol uitgeschreven. Zo helder was het.", name: "Maud", age: 31 },
+  { text: "Na het lezen heb ik een gesprek gevoerd dat ik al lang voor me uitschoof. Ik was er die avond klaar voor.", name: "Elise", age: 39 },
+  { text: "Dit boek heeft me laten zien dat verandering niet begint met doen — maar met besluiten wie je bent.", name: "Fenna", age: 34 },
+  { text: "Ik huilde bij het hoofdstuk over patronen. Niet van verdriet — van herkenning. En daarna opluchting.", name: "Julie", age: 29 },
+  { text: "Het stuk over de identiteitswet was een klap in mijn gezicht. De beste die ik ooit heb gekregen.", name: "Nathalie", age: 44 },
+  { text: "Ik heb zoveel boeken gelezen. Dit voelde direct anders — al op de eerste pagina.", name: "Chantal", age: 37 },
+  { text: "Na één avond lezen wist ik: dit heeft me wakker geschud. Niet op een manier die pijn doet — op een manier die bevrijdt.", name: "Anne", age: 33 },
+  { text: "Ik stelde mezelf één vraag uit hoofdstuk vier. Diezelfde avond nog had ik mijn antwoord.", name: "Merel", age: 28 },
+  { text: "Na het lezen heb ik mijn to-do lijst weggegooid en opnieuw begonnen — vanuit een heel andere plek.", name: "Lena", age: 31 },
+  { text: "Ik heb zoveel boeken over persoonlijke groei gelezen en dit is het eerste waarbij ik dacht: dit is precies wat ik nodig had.", name: "Sophie", age: 36 },
+  { text: "De ochtend na het lezen voelde ik me niet langer iemand die probeert. Ik voelde me iemand die is.", name: "Anouk", age: 30 },
+  { text: "Ik heb het uitgelezen en ben direct anders gaan slapen. Iets had zich gezet. Nog diezelfde nacht.", name: "Britt", age: 27 },
+  { text: "De referentiekaart heb ik na het lezen meteen uitgeschreven en op mijn bureau gelegd.", name: "Demi", age: 32 },
+  { text: "Ik heb het in één avond uitgelezen. De tweede helft las ik langzamer — omdat ik elke zin wilde laten landen.", name: "Kim", age: 40 },
+  { text: "Jo heeft iets geschreven dat je niet vergeet. Ik merkte het al terwijl ik nog aan het lezen was.", name: "Eline", age: 35 },
+  { text: "De ochtend erna zei ik nee tegen iets waar ik normaal meteen ja op zeg. Zonder twijfel. Dat was nieuw.", name: "Rianne", age: 38 },
+  { text: "Het moment dat ik begreep dat ik nooit bóven mijn identiteit kan leven — dat was het keerpunt. Nog tijdens het lezen.", name: "Laura", age: 43 },
+];
+
+(function initDynTestimonial(){
+  const idx  = Math.floor(Math.random() * dynTestimonials.length);
+  const el   = document.getElementById('dynamicTestimonial');
+  const txt  = document.getElementById('dynText');
+  const attr = document.getElementById('dynAttr');
+  if(!el || !txt || !attr) return;
+  txt.textContent  = '\u201C' + dynTestimonials[idx].text + '\u201D';
+  attr.textContent = `\u2014 ${dynTestimonials[idx].name}, ${dynTestimonials[idx].age} jaar \u00B7 binnen 24 uur na het lezen`;
+  el.style.transition = 'opacity 0.6s ease';
+  let cur = idx;
+  setInterval(() => {
+    el.style.opacity = '0';
+    setTimeout(() => {
+      cur = (cur + 1) % dynTestimonials.length;
+      const nt = dynTestimonials[cur];
+      txt.textContent  = '\u201C' + nt.text + '\u201D';
+      attr.textContent = `\u2014 ${nt.name}, ${nt.age} jaar \u00B7 binnen 24 uur na het lezen`;
+      el.style.opacity = '1';
+    }, 600);
+  }, 12000);
+})();
+
+// ── ADELAARSVEER (canvas) ──
+(function(){
+  ['heroFeather','ctaFeather'].forEach(id => {
+    const c = document.getElementById(id);
+    if(!c) return;
+    const ctx = c.getContext('2d');
+    const W = c.width, H = c.height;
+    const CX = W / 2, CY = H / 2 + 8;
+
+    // Palet — blauw-goud, kracht
+    const CREAM  = 'rgba(224,232,245,';
+    const BLUE   = 'rgba(122,175,212,';
+    const BLUE2  = 'rgba(184,212,240,';
+    const GOLD   = '#C9A84C';
+    const GOLD2  = '#EDD06A';
+
+    // ── Veer geometrie ──
+    // Schacht: verticaal, licht gebogen, van onder naar boven
+    // Baarden: links en rechts van de schacht, taps toelopend naar de punt
+    // Totale hoogte ~72px, breedte op breedste punt ~38px
+
+    const SHAFT_LEN = 70;   // lengte schacht
+    const SHAFT_CX  = CX;
+    const SHAFT_Y0  = CY + 34;  // basis (onderaan)
+    const SHAFT_Y1  = CY - 36;  // punt (bovenaan)
+
+    // Schacht-curve: licht gebogen naar rechts bovenin (adelaar-authentiek)
+    function shaftPoint(frac){
+      // frac 0=basis, 1=punt
+      // Subtiele S-curve
+      const curve = Math.sin(frac * Math.PI) * 5;
+      return {
+        x: SHAFT_CX + curve,
+        y: SHAFT_Y0 + (SHAFT_Y1 - SHAFT_Y0) * frac,
+      };
+    }
+
+    // Baard-breedte: breed in het midden, smal bij basis en punt
+    // Linker baard iets smaller dan rechter (asymmetrie zoals echte veer)
+    function barbWidth(frac, side){
+      // frac 0=basis, 1=punt
+      // Breedst op ~35% van de veer
+      const profile = Math.pow(Math.sin(frac * Math.PI * 0.92 + 0.1), 0.65);
+      return profile * (side === -1 ? 14 : 20); // links smaller
+    }
+
+    // ── Teken één baard-lijn ──
+    function drawBarb(frac, side, alpha, waver, ts){
+      const sp   = shaftPoint(frac);
+      const bw   = barbWidth(frac, side);
+      if(bw < 0.5) return;
+
+      // Elke baard loopt licht gebogen naar buiten en omlaag
+      const taper = 1 - frac * 0.4;  // barbjes smaller bovenaan
+      const droopY = bw * 0.3 * (1 - frac); // licht hangend onderaan
+
+      // Fijne trilling per baard
+      const wiggle = Math.sin(frac * 18 + ts * 0.8 + side) * waver;
+
+      ctx.save();
+      ctx.globalAlpha = alpha * (0.55 + frac * 0.35);
+      ctx.strokeStyle = frac > 0.75
+        ? CREAM + (0.45 + frac * 0.4) + ')'   // bovenste deel lichter
+        : BLUE  + (0.55 + frac * 0.3) + ')';
+      ctx.lineWidth = 0.7 * taper;
+      ctx.lineCap = 'round';
+
+      ctx.beginPath();
+      ctx.moveTo(sp.x, sp.y);
+      ctx.bezierCurveTo(
+        sp.x + side * bw * 0.5 + wiggle, sp.y + droopY * 0.3,
+        sp.x + side * bw * 0.85 + wiggle, sp.y + droopY * 0.7,
+        sp.x + side * bw + wiggle, sp.y + droopY
+      );
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // ── Teken de schacht ──
+    function drawShaft(alpha, ts){
+      ctx.save();
+      // Gloeiende schacht — goud
+      ctx.shadowColor = GOLD2;
+      ctx.shadowBlur  = 8;
+      ctx.strokeStyle = GOLD;
+      ctx.lineWidth   = 1.4;
+      ctx.lineCap     = 'round';
+      ctx.globalAlpha = alpha * 0.90;
+      ctx.beginPath();
+      const p0 = shaftPoint(0), p1 = shaftPoint(0.5), p2 = shaftPoint(1);
+      ctx.moveTo(p0.x, p0.y);
+      ctx.quadraticCurveTo(p1.x + 2, p1.y, p2.x, p2.y);
+      ctx.stroke();
+
+      // Fijn highlight op schacht
+      ctx.shadowBlur  = 0;
+      ctx.strokeStyle = GOLD2;
+      ctx.lineWidth   = 0.5;
+      ctx.globalAlpha = alpha * 0.55;
+      ctx.beginPath();
+      ctx.moveTo(p0.x + 0.5, p0.y);
+      ctx.quadraticCurveTo(p1.x + 2.5, p1.y, p2.x + 0.5, p2.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // ── Punt van de veer: fijne losse baardjes ──
+    function drawTip(alpha, ts){
+      const sp = shaftPoint(0.92);
+      ctx.save();
+      ctx.globalAlpha = alpha * 0.50;
+      for(let i = 0; i < 5; i++){
+        const angle = (-0.3 + i * 0.18) - 0.4;
+        const len   = 6 + i * 2;
+        const waver = Math.sin(ts * 1.1 + i) * 1.2;
+        ctx.strokeStyle = CREAM + '0.6)';
+        ctx.lineWidth   = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(sp.x, sp.y);
+        ctx.lineTo(
+          sp.x + Math.sin(angle) * len + waver,
+          sp.y - Math.cos(angle) * len
+        );
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // ── Gouden gloed rondom de veer (ademt) ──
+    function drawAura(alpha, ts){
+      const pulse = 0.6 + 0.4 * Math.sin(ts * 0.0018);
+      const g = ctx.createRadialGradient(CX, CY, 0, CX, CY, 52 * pulse);
+      g.addColorStop(0,   `rgba(201,168,76,${0.12 * alpha * pulse})`);
+      g.addColorStop(0.4, `rgba(122,175,212,${0.08 * alpha})`);
+      g.addColorStop(1,   'rgba(122,175,212,0)');
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(CX, CY, 52 * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = g;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ── Subtiele zwevende beweging ──
+    function frame(ts){
+      ctx.clearRect(0, 0, W, H);
+
+      const t      = ts * 0.001;
+      // Veer zweeft zacht op en neer, licht kantelend
+      const floatY = Math.sin(t * 0.55) * 3.5;
+      const tiltX  = Math.sin(t * 0.38) * 1.8;
+      const waver  = 0.4 + 0.3 * Math.sin(t * 0.7); // barb-trilling amplitude
+
+      ctx.save();
+      ctx.translate(tiltX, floatY);
+
+      drawAura(1, ts);
+
+      // Baarden: van basis naar punt (frac 0→1), 48 lijnen per kant
+      const BARBS = 48;
+      for(let i = 0; i < BARBS; i++){
+        const frac = i / (BARBS - 1);
+        drawBarb(frac, -1, 1, waver * 0.6, t); // links
+        drawBarb(frac,  1, 1, waver,       t); // rechts
+      }
+
+      drawShaft(1, t);
+      drawTip(1, t);
+
+      ctx.restore();
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+})();
+
+// ── INNERLIJK VUUR ANIMATIE ──
+(function(){
+  ['heroFlame','ctaFlame'].forEach(id => {
+    const canvas = document.getElementById(id);
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const CX = W / 2, BASE = H - 28;
+
+    // Blauw-goud palet — kracht, helderheid, diepte
+    const GOLD   = '#C9A84C';
+    const GOLD2  = '#EDD06A';
+    const WHITE  = '#F0F4FF';
+    const BLUE   = '#7AAFD4';
+    const BLUE2  = '#B8D4F0';
+    const DEEP   = '#1A2A4A';
+
+    // ── Cycle: 3 fasen, ~14s totaal ──
+    // 0–4s  : Stilte  — diep gloeiende kern, nauwelijks beweging
+    // 4–9s  : Ontbranden — vlam laait langzaam op
+    // 9–14s : Kracht — volle vlam, vonken stijgen op
+    const T_TOTAL  = 14;
+    const T_STILL  = 4;
+    const T_RISE   = 5;
+    const T_FULL   = 5;
+
+    function easeIn(t)  { return t * t * t; }
+    function easeOut(t) { return 1 - Math.pow(1-t, 3); }
+    function easeInOut(t){ return t < 0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+    function lerp(a,b,t){ return a + (b-a)*t; }
+    function clamp(v,mn,mx){ return Math.max(mn,Math.min(mx,v)); }
+
+    // ── Noise helper (smooth pseudo-random turbulence) ──
+    function noise(x, t){ return Math.sin(x*2.1 + t*1.7)*0.5 + Math.sin(x*3.7 - t*2.3)*0.3 + Math.sin(x*1.3 + t*0.9)*0.2; }
+
+    // ── Flame shape: returns array of {x,y} points along left/right edge ──
+    function flameEdge(side, height, width, turbulence, ts, phase){
+      const pts = [];
+      const steps = 40;
+      for(let i = 0; i <= steps; i++){
+        const frac = i / steps;                  // 0 = base, 1 = tip
+        const y    = BASE - frac * height;
+        const taper = Math.pow(1 - frac, 0.55);  // wider at base, pointed tip
+        const nx   = noise(frac * 3 + phase, ts) * turbulence * taper;
+        const halfW = width * 0.5 * taper;
+        const x    = CX + side * (halfW + nx);
+        pts.push({x, y});
+      }
+      return pts;
+    }
+
+    // ── Particles (rising sparks/embers) ──
+    const sparks = [];
+    class Spark {
+      constructor(intensity){
+        this.reset(intensity);
+      }
+      reset(intensity){
+        this.x     = CX + (Math.random()-0.5) * 60 * intensity;
+        this.y     = BASE - 20 - Math.random() * 80 * intensity;
+        this.vx    = (Math.random()-0.5) * 0.8;
+        this.vy    = -(0.6 + Math.random() * 1.8) * intensity;
+        this.life  = 1;
+        this.decay = 0.008 + Math.random() * 0.015;
+        this.size  = 1.2 + Math.random() * 2.8 * intensity;
+        this.gold  = Math.random() > 0.35;
+        this.active = intensity > 0.2;
+      }
+      update(intensity){
+        if(!this.active){ if(Math.random() < intensity * 0.05) this.reset(intensity); return; }
+        this.x  += this.vx;
+        this.y  += this.vy;
+        this.vx += (Math.random()-0.5) * 0.12;
+        this.vy -= 0.015;
+        this.life -= this.decay;
+        if(this.life <= 0) this.reset(intensity);
+      }
+      draw(){
+        if(!this.active || this.life <= 0) return;
+        const a = this.life * 0.9;
+        const s = this.size * (0.3 + this.life * 0.7);
+        ctx.save();
+        ctx.globalAlpha = a;
+        const g = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,s*2);
+        if(this.gold){
+          g.addColorStop(0,  GOLD2);
+          g.addColorStop(0.5,'rgba(201,168,76,0.5)');
+          g.addColorStop(1,  'rgba(201,168,76,0)');
+        } else {
+          g.addColorStop(0,  WHITE);
+          g.addColorStop(0.4, BLUE2);
+          g.addColorStop(1,  'rgba(122,175,212,0)');
+        }
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, s*2, 0, Math.PI*2);
+        ctx.fillStyle = g;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+    for(let i=0; i<45; i++) sparks.push(new Spark(0));
+
+    // ── Draw the flame shape ──
+    function drawFlame(height, width, turbulence, coreAlpha, outerAlpha, ts){
+      if(height < 2) return;
+
+      const leftPts  = flameEdge(-1, height, width, turbulence, ts, 0);
+      const rightPts = flameEdge( 1, height, width, turbulence, ts, 1.5);
+
+      // Outer glow layer (wide, soft)
+      ctx.save();
+      ctx.filter = 'blur(8px)';
+      ctx.globalAlpha = outerAlpha * 0.4;
+      ctx.beginPath();
+      ctx.moveTo(CX - width*0.5, BASE);
+      leftPts.forEach(p => ctx.lineTo(p.x, p.y));
+      rightPts.slice().reverse().forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.lineTo(CX + width*0.5, BASE);
+      ctx.closePath();
+      const og = ctx.createLinearGradient(CX, BASE, CX, BASE - height);
+      og.addColorStop(0,   'rgba(201,168,76,0.8)');
+      og.addColorStop(0.3, 'rgba(122,175,212,0.6)');
+      og.addColorStop(0.7, 'rgba(184,212,240,0.3)');
+      og.addColorStop(1,   'rgba(240,244,255,0)');
+      ctx.fillStyle = og;
+      ctx.fill();
+      ctx.restore();
+
+      // Mid flame
+      ctx.save();
+      ctx.filter = 'blur(3px)';
+      ctx.globalAlpha = outerAlpha * 0.75;
+      ctx.beginPath();
+      ctx.moveTo(CX - width*0.38, BASE);
+      leftPts.forEach(p => ctx.lineTo(lerp(CX, p.x, 0.78), p.y));
+      rightPts.slice().reverse().forEach(p => ctx.lineTo(lerp(CX, p.x, 0.78), p.y));
+      ctx.lineTo(CX + width*0.38, BASE);
+      ctx.closePath();
+      const mg = ctx.createLinearGradient(CX, BASE, CX, BASE-height);
+      mg.addColorStop(0,   'rgba(237,208,106,0.95)');
+      mg.addColorStop(0.25,'rgba(122,175,212,0.85)');
+      mg.addColorStop(0.65,'rgba(184,212,240,0.55)');
+      mg.addColorStop(1,   'rgba(240,244,255,0)');
+      ctx.fillStyle = mg;
+      ctx.fill();
+      ctx.restore();
+
+      // Inner core (hot, bright)
+      ctx.save();
+      ctx.globalAlpha = coreAlpha;
+      ctx.beginPath();
+      ctx.moveTo(CX - width*0.18, BASE);
+      leftPts.forEach(p => ctx.lineTo(lerp(CX, p.x, 0.35), p.y));
+      rightPts.slice().reverse().forEach(p => ctx.lineTo(lerp(CX, p.x, 0.35), p.y));
+      ctx.lineTo(CX + width*0.18, BASE);
+      ctx.closePath();
+      const cg = ctx.createLinearGradient(CX, BASE, CX, BASE-height*0.85);
+      cg.addColorStop(0,   'rgba(255,248,220,1)');
+      cg.addColorStop(0.15,'rgba(237,208,106,0.95)');
+      cg.addColorStop(0.5, 'rgba(184,212,240,0.8)');
+      cg.addColorStop(0.85,'rgba(240,244,255,0.3)');
+      cg.addColorStop(1,   'rgba(240,244,255,0)');
+      ctx.fillStyle = cg;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ── Draw the smouldering base glow (stilte phase) ──
+    function drawEmber(intensity, ts){
+      const pulse = 0.75 + 0.25 * Math.sin(ts * 1.2);
+      const r     = 28 + 12 * pulse * intensity;
+      const g     = ctx.createRadialGradient(CX, BASE, 0, CX, BASE, r * 3);
+      g.addColorStop(0,    `rgba(237,208,106,${0.85 * intensity * pulse})`);
+      g.addColorStop(0.25, `rgba(201,168,76,${0.55 * intensity * pulse})`);
+      g.addColorStop(0.55, `rgba(122,175,212,${0.20 * intensity})`);
+      g.addColorStop(1,    'rgba(122,175,212,0)');
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(CX, BASE, r * 3, 0, Math.PI*2);
+      ctx.fillStyle = g;
+      ctx.fill();
+      // Bright core dot
+      const dot = ctx.createRadialGradient(CX, BASE, 0, CX, BASE, r*0.35);
+      dot.addColorStop(0,   'rgba(255,252,240,1)');
+      dot.addColorStop(0.5, `rgba(237,208,106,${0.9 * pulse})`);
+      dot.addColorStop(1,   'rgba(201,168,76,0)');
+      ctx.beginPath();
+      ctx.arc(CX, BASE, r*0.35, 0, Math.PI*2);
+      ctx.fillStyle = dot;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ── Main render loop ──
+    let startTime = null;
+    function frame(ts){
+      if(!startTime) startTime = ts;
+      const elapsed = (ts - startTime) / 1000;
+      const cycle   = elapsed % T_TOTAL;
+
+      ctx.clearRect(0, 0, W, H);
+
+      let height, width, turbulence, coreA, outerA, emberI, sparkI;
+
+      if(cycle < T_STILL){
+        // Phase 1: Stilte — alleen gloeiende kern
+        const t    = cycle / T_STILL;
+        const slow = Math.sin(ts * 0.0004) * 0.5 + 0.5; // very slow pulse
+        height     = 0;
+        width      = 0;
+        turbulence = 0;
+        coreA      = 0;
+        outerA     = 0;
+        emberI     = 0.55 + 0.35 * slow;
+        sparkI     = 0;
+      } else if(cycle < T_STILL + T_RISE){
+        // Phase 2: Ontbranden — vlam laait op
+        const t    = easeInOut((cycle - T_STILL) / T_RISE);
+        height     = lerp(0,   165, t) + noise(0, ts*0.001)*8*t;
+        width      = lerp(0,    88, t);
+        turbulence = lerp(0,    14, t);
+        coreA      = lerp(0,  0.92, t);
+        outerA     = lerp(0,  0.80, t);
+        emberI     = lerp(1,  0.20, t);
+        sparkI     = t;
+      } else {
+        // Phase 3: Kracht — volle vlam ademt rustig
+        const t    = (cycle - T_STILL - T_RISE) / T_FULL;
+        const breathe = Math.sin(ts * 0.0008) * 0.12 + 0.88;
+        // Laatste 20% van fase: fade out naar stilte
+        const fade = t > 0.8 ? easeIn(1 - (t - 0.8) / 0.2) : 1;
+        height     = (165 + noise(0, ts*0.0006)*18) * breathe * fade;
+        width      = (88  + noise(1, ts*0.0008)*8)  * breathe * fade;
+        turbulence = (14  + noise(2, ts*0.0007)*4)  * fade;
+        coreA      = 0.92 * breathe * fade;
+        outerA     = 0.80 * breathe * fade;
+        emberI     = lerp(0.2, 0.9, easeIn(1-fade));
+        sparkI     = fade;
+      }
+
+      // Draw ground glow always
+      drawEmber(Math.max(emberI, 0.15), ts);
+
+      // Draw flame (only when it has height)
+      if(height > 1) drawFlame(height, width, turbulence, coreA, outerA, ts * 0.001);
+
+      // Update + draw sparks
+      sparks.forEach(s => { s.update(sparkI); s.draw(); });
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+})();
+
+</script>
+</body>
+</html>

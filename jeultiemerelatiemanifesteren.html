@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Je Ultieme Relatie Manifesteren — Met liefde van Jo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:     #0A0608;
+    --bg2:    #130A0D;
+    --gold:   #C9A84C;
+    --gold2:  #EDD06A;
+    --cream:  #F5EDE8;
+    --rose:   #8C3A55;
+    --rose2:  #D4789A;
+    --muted:  #B88898;
+    --dim:    #705060;
+    --accent: #1A0810;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--muted);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1000; opacity: 0.35;
+  }
+
+  /* ── STICKY SOCIAL TOAST (via JS) ── */
+
+  /* ── STARS ── */
+  .stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .star {
+    position: absolute; border-radius: 50%; background: var(--rose2);
+    animation: twinkle var(--dur,3s) ease-in-out infinite;
+    animation-delay: var(--delay,0s);
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: var(--min-op,0.2); transform: scale(1); }
+    50%     { opacity: var(--max-op,0.7); transform: scale(1.4); }
+  }
+
+  /* ── EAGLE ANIMATIONS ── */
+
+  /* ── LAYOUT ── */
+  .page { position: relative; z-index: 1; padding-top: 0; }
+  section { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center; padding: 5rem 2rem 3rem; position: relative;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(80,20,40,0.30) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .eagle-wrap { display: flex; justify-content: center; align-items: center; margin: 0 auto 2.5rem; height: 200px; }
+
+  .gold-rule { width: 120px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); margin: 0 auto 2.5rem; opacity: 0.6; }
+  .gold-rule.wide  { width: 200px; }
+  .gold-rule.full  { width: 100%; max-width: 400px; }
+
+  .pre-headline {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--rose2); letter-spacing: 0.08em;
+    margin-bottom: 1.2rem; opacity: 0.9;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.8rem); color: var(--cream);
+    line-height: 1.15; margin-bottom: 0.4rem;
+  }
+  h1 em { color: var(--rose2); font-style: italic; }
+  .subheadline {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.1rem,3vw,1.4rem); color: var(--muted);
+    margin: 1.4rem auto 0; max-width: 560px; line-height: 1.6;
+  }
+
+  /* ── SOCIAL PROOF BAR (below hero) ── */
+  .proof-bar {
+    display: flex; justify-content: center; align-items: center;
+    gap: 2rem; flex-wrap: wrap;
+    padding: 1.4rem 2rem;
+    border-top: 1px solid rgba(201,168,76,0.10);
+    border-bottom: 1px solid rgba(201,168,76,0.10);
+    background: rgba(18,8,13,0.6);
+    max-width: 720px; margin: 0 auto;
+  }
+  .proof-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.28em; color: var(--muted); text-transform: uppercase;
+  }
+  .proof-item .num {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    color: var(--gold); font-weight: 600; letter-spacing: 0;
+  }
+  .proof-sep { color: var(--dim); opacity: 0.4; font-size: 0.8rem; }
+
+  /* ── SECTIONS ── */
+  .herkenning {
+    background: linear-gradient(180deg,transparent,rgba(30,8,18,0.55),transparent);
+    border-top: 1px solid rgba(180,80,120,0.14);
+    border-bottom: 1px solid rgba(180,80,120,0.14);
+  }
+  .section-kicker {
+    font-family: 'Cinzel', serif; font-size: 0.65rem;
+    letter-spacing: 0.45em; color: var(--gold); opacity: 0.7;
+    text-transform: uppercase; margin-bottom: 1.2rem;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(1.6rem,4vw,2.4rem); color: var(--cream);
+    line-height: 1.25; margin-bottom: 1.8rem;
+  }
+  h2 em { color: var(--rose2); font-style: italic; }
+  p { margin-bottom: 1.2rem; color: var(--muted); }
+  p em { color: var(--cream); font-style: italic; }
+  p strong { color: var(--cream); font-weight: 600; }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.15rem,3vw,1.5rem); color: var(--rose2);
+    text-align: center; line-height: 1.5;
+    padding: 2rem 1.5rem; margin: 2rem 0;
+    border-top: 1px solid rgba(212,120,154,0.20);
+    border-bottom: 1px solid rgba(212,120,154,0.20);
+    position: relative;
+  }
+  .pullquote::before { content:'❧'; display:block; color:var(--gold); font-size:1.2rem; margin-bottom:0.8rem; opacity:0.6; }
+  .gold-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(1.1rem,2.5vw,1.35rem); color: var(--gold);
+    text-align: center; padding: 1.5rem; margin: 2rem 0;
+    border-left: 2px solid rgba(201,168,76,0.3);
+    border-right: 2px solid rgba(201,168,76,0.3);
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list { list-style: none; margin: 2rem 0; }
+  .check-list li {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 0.9rem 0; border-bottom: 1px solid rgba(201,168,76,0.08);
+    color: var(--muted); font-size: 1.05rem;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before { content:'→'; color:var(--rose2); font-size:1rem; flex-shrink:0; margin-top:0.1rem; opacity:0.8; }
+
+  /* ── WAT LIJST ── */
+  .wat-lijst { list-style: none; margin: 2rem 0; }
+  .wat-lijst li {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 0; border-bottom: 1px solid rgba(201,168,76,0.10);
+    color: var(--muted);
+  }
+  .wat-lijst li:last-child { border-bottom: none; }
+  .wat-dot { width:6px; height:6px; background:var(--rose2); border-radius:50%; flex-shrink:0; margin-top:0.6rem; opacity:0.8; }
+  .wat-lijst strong { color: var(--cream); display:block; font-size:1.05rem; margin-bottom:0.2rem; }
+
+  /* ── VALUE STACK ── */
+  .value-stack {
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(18,8,13,0.7);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .value-stack-title {
+    font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.4em; color: var(--gold); opacity: 0.7;
+    text-transform: uppercase; margin-bottom: 1.5rem; text-align: center;
+  }
+  .value-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.7rem 0; border-bottom: 1px solid rgba(201,168,76,0.07);
+    gap: 1rem;
+  }
+  .value-row:last-child { border-bottom: none; }
+  .value-label { font-family:'EB Garamond',serif; color: var(--muted); font-size: 1rem; }
+  .value-price { font-family:'Cormorant Garamond',serif; color:var(--dim); font-size:1rem; text-decoration:line-through; white-space:nowrap; }
+  .value-total-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 0 0;  margin-top: 0.5rem;
+    border-top: 1px solid rgba(201,168,76,0.25);
+  }
+  .value-total-label { font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; }
+  .value-total-price { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--cream); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonial-block {
+    background: rgba(212,120,154,0.05);
+    border: 1px solid rgba(212,120,154,0.15);
+    border-left: 3px solid rgba(212,120,154,0.45);
+    padding: 2rem 2rem 2rem 2.5rem; margin: 2.5rem 0; position: relative;
+  }
+  .testimonial-block::before {
+    content:'\201C'; position:absolute; top:-0.6rem; left:1.2rem;
+    font-family:'Cormorant Garamond',serif; font-size:4rem;
+    color:var(--rose2); opacity:0.22; line-height:1;
+  }
+  .testimonial-text { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem,2.5vw,1.3rem); color:var(--cream); line-height:1.6; margin-bottom:0.8rem; }
+  .testimonial-attr { font-size:0.82rem; color:var(--rose2); letter-spacing:0.08em; opacity:0.8; }
+
+  /* ── TESTIMONIAL GRID ── */
+  .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+  @media(max-width:560px){ .testi-grid { grid-template-columns: 1fr; } }
+  .testi-card {
+    background: rgba(18,8,13,0.8); border: 1px solid rgba(201,168,76,0.10);
+    padding: 1.4rem; position: relative;
+  }
+  .testi-card::before { content:'\201C'; position:absolute; top:-0.3rem; left:1rem; font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--gold); opacity:0.18; line-height:1; }
+  .testi-card p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--muted); margin-bottom:0.6rem; line-height:1.55; }
+  .testi-card .attr { font-size:0.75rem; color:var(--gold); opacity:0.7; letter-spacing:0.06em; }
+  .stars-row { color: var(--gold); font-size:0.75rem; letter-spacing:0.12em; margin-bottom:0.5rem; opacity:0.85; }
+
+  /* ── AUTEUR ── */
+  .auteur-block {
+    background: rgba(30,15,35,0.4); border: 1px solid rgba(201,168,76,0.12);
+    padding: 2.5rem; margin: 2rem 0; position: relative;
+  }
+  .auteur-block::before { content:''; position:absolute; top:0; left:0; width:40px; height:1px; background:var(--rose2); opacity:0.4; }
+  .auteur-naam { font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.3em; color:var(--gold); margin-bottom:0.8rem; opacity:0.8; }
+
+  /* ── CTA SECTION ── */
+  .cta-section { text-align:center; padding:4rem 2rem 5rem; position:relative; }
+  .cta-section::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 50%, rgba(70,15,35,0.22) 0%, transparent 70%);
+    pointer-events:none;
+  }
+
+  /* ── PRICE + CTA ── */
+  .prijs-badge { display:inline-block; font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; color:var(--gold); opacity:0.7; margin-bottom:1rem; text-transform:uppercase; }
+  .prijs-was { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--dim); text-decoration:line-through; margin-bottom:0.2rem; }
+  .prijs { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,8vw,5rem); font-weight:300; color:var(--cream); line-height:1; margin-bottom:0.4rem; }
+  .prijs sup { font-size:0.4em; vertical-align:top; margin-top:0.4em; color:var(--gold); }
+  .prijs-sub { font-size:0.85rem; color:var(--dim); letter-spacing:0.1em; margin-bottom:2.5rem; }
+  .prijs-saving { display:inline-block; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:var(--gold); font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; padding:0.3rem 1rem; margin-bottom:2rem; }
+
+  /* ── BIG CTA BUTTON ── */
+  .btn-koop {
+    display: inline-block;
+    font-family: 'Cinzel', serif; font-size: 0.82rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--bg); text-decoration: none;
+    background: linear-gradient(135deg, var(--gold2), var(--gold), #A87830);
+    padding: 1.35rem 3.8rem;
+    border: none; cursor: pointer; position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 40px rgba(201,168,76,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .btn-koop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 55px rgba(201,168,76,0.40), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-koop:active { transform: translateY(0); }
+  .btn-koop-sub { display:block; font-size:0.68rem; letter-spacing:0.18em; opacity:0.7; margin-top:0.3rem; font-family:'EB Garamond',serif; font-style:italic; color:inherit; }
+
+  /* ── MICRO-COPY TRUST ── */
+  .trust-icons {
+    display: flex; justify-content: center; align-items: center; gap: 1.8rem;
+    margin-top: 1.4rem; flex-wrap: wrap;
+  }
+  .trust-item { display:flex; align-items:center; gap:0.45rem; font-size:0.75rem; color:var(--dim); letter-spacing:0.05em; }
+  .trust-item svg { opacity:0.5; flex-shrink:0; }
+
+  /* ── GARANTIE ── */
+  .garantie {
+    display:flex; align-items:flex-start; gap:1rem;
+    background:rgba(201,168,76,0.04); border:1px solid rgba(201,168,76,0.12);
+    padding:1.5rem; margin:2.5rem 0; text-align:left;
+  }
+  .garantie-icon { font-size:1.5rem; flex-shrink:0; opacity:0.7; }
+  .garantie p { margin:0; font-size:0.9rem; line-height:1.6; color:var(--dim); }
+  .garantie strong { color:var(--gold); display:block; margin-bottom:0.2rem; }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid rgba(201,168,76,0.09); }
+  .faq-q {
+    width:100%; background:none; border:none; cursor:pointer; text-align:left;
+    padding:1.2rem 0; display:flex; justify-content:space-between; align-items:center;
+    font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--cream);
+    letter-spacing:0.02em; gap:1rem;
+  }
+  .faq-q .chevron { color:var(--gold); opacity:0.6; transition:transform 0.3s; flex-shrink:0; font-size:0.9rem; }
+  .faq-q.open .chevron { transform:rotate(180deg); }
+  .faq-a {
+    max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.4s ease;
+    font-size:0.95rem; color:var(--muted); line-height:1.7;
+  }
+  .faq-a.open { max-height:300px; padding-bottom:1.2rem; }
+
+  /* ── FOOTER ── */
+  footer { text-align:center; padding:3rem 2rem; border-top:1px solid rgba(201,168,76,0.08); }
+  footer p { font-size:0.78rem; color:var(--dim); line-height:1.8; }
+  footer a { color:var(--dim); text-decoration:underline; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  .ornament { text-align:center; color:var(--gold); opacity:0.4; font-size:1.1rem; letter-spacing:0.8em; margin:0.5rem 0; }
+
+  /* ── STICKY BOTTOM CTA (mobile) ── */
+  .sticky-cta {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(0deg, rgba(6,8,15,0.98) 60%, transparent);
+    padding: 1.2rem 1.5rem 1.5rem;
+    display: none; z-index: 490;
+    text-align: center;
+  }
+  .sticky-cta .btn-koop { width:100%; max-width:400px; font-size:0.75rem; padding:1.1rem 2rem; display:block; margin:0 auto; }
+  @media(max-width:640px){ .sticky-cta { display: block; } }
+
+  @media(max-width:600px){
+    section { padding:3rem 1.4rem; }
+    .auteur-block { padding:1.8rem 1.4rem; }
+    .btn-koop { padding:1.1rem 2.5rem; }
+    .garantie { flex-direction:column; gap:0.5rem; }
+    .proof-bar { gap:1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ SOCIAL TOAST ══ -->
+<div id="socialToast" style="
+  position:fixed; bottom:5rem; left:1.2rem; z-index:600;
+  background:rgba(18,8,13,0.96); border:1px solid rgba(201,168,76,0.20);
+  border-left:3px solid rgba(201,168,76,0.6);
+  padding:0.85rem 1.1rem; max-width:280px;
+  backdrop-filter:blur(10px);
+  transform:translateX(-120%); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events:none;
+">
+  <div style="display:flex;align-items:center;gap:0.7rem;">
+    <div id="toastAvatar" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:0.75rem;color:var(--bg);font-weight:600;flex-shrink:0;"></div>
+    <div>
+      <div id="toastText" style="font-family:'EB Garamond',serif;font-size:0.88rem;color:var(--cream);line-height:1.4;"></div>
+      <div id="toastTime" style="font-size:0.7rem;color:var(--dim);margin-top:0.2rem;letter-spacing:0.04em;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="stars" id="stars"></div>
+
+<div class="page">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero reveal">
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--rose2); font-size:clamp(1.1rem,3vw,1.5rem); letter-spacing:0.15em; margin-bottom:2.5rem;">Met liefde van Jo</div>
+    <div class="gold-rule wide"></div>
+
+    <!-- Elegante zwaantjes + infinity animatie -->
+    <div class="eagle-wrap" style="height:290px; flex-direction:column; gap:0; align-items:center;">
+      <canvas id="heroSwans" width="320" height="72" style="display:block;"></canvas>
+      <canvas id="heroFlame" width="420" height="220" style="display:block;margin-top:-4px;"></canvas>
+    </div>
+    <p class="pre-headline">Voor wie weet dat de verbinding bestaat —<br/>maar niet begrijpt waarom die er nog niet is.</p>
+    <h1>Je Ultieme Relatie<br/><em>Manifesteren.</em></h1>
+    <p class="subheadline">Zo effectief dat je twinflame in de fik schiet.</p>
+    <div class="gold-rule full" style="margin-top:2.5rem;"></div>
+  </section>
+
+  <!-- ══ SOCIAL PROOF BAR ══ -->
+  <div class="proof-bar reveal">
+    <div class="proof-item"><span class="num" id="readerCount">984</span><span>lezers</span></div>
+    <span class="proof-sep">·</span>
+    <div class="proof-item"><span class="num">★ 4.9</span><span>beoordeling</span></div>
+    <span class="proof-sep">·</span>
+    <div class="proof-item"><span class="num">24u</span><span>levertijd</span></div>
+    <span class="proof-sep">·</span>
+    <div class="proof-item"><span class="num">€15,15</span><span>eenmalig</span></div>
+  </div>
+
+  <!-- ══ HERKENNING ══ -->
+  <section class="herkenning reveal">
+    <p class="section-kicker">Herken jij dit?</p>
+    <h2>Je hebt alles geprobeerd.<br/><em>En toch is die verbinding er nog niet.</em></h2>
+
+    <p>Je hebt gevisualiseerd. Je hebt geaffirmeerd. Je hebt op tekens gewacht. Je hebt scriptures gedaan, 369 methodes, moon water, angelgetallen. Je gelooft in de verbinding — diep van binnen, met elke vezel.</p>
+    <p><em>En toch. Hij reageert niet. Zij is er niet. De afstand blijft.</em></p>
+
+    <ul class="check-list">
+      <li>Je checkt het profiel van je SP en vraagt je af wat het betekent dat er niets geplaatst wordt</li>
+      <li>Je voelt de verbinding met je twinflame of soulmate zo sterk — maar in de werkelijkheid zie je er niks van terug</li>
+      <li>Je weet dat jij en je twinflame of soulmate bij elkaar horen, maar het lijkt alsof het universum het niet begrijpt</li>
+      <li>Je bent moe van wachten — maar opgeven voelt onmogelijk omdat jij weet wat jij voelt</li>
+      <li>Je vraagt je af wat jij verkeerd doet, terwijl je alles juist lijkt te doen</li>
+    </ul>
+
+    <div class="pullquote">
+      Je doet niks verkeerd.<br/>
+      Je mist alleen één ding —<br/>
+      en dat ene ding verandert alles.
+    </div>
+  </section>
+
+  <!-- ══ DE WAARHEID ══ -->
+  <section class="reveal">
+    <p class="section-kicker">De waarheid</p>
+    <h2>Het ligt niet aan de ander.<br/><em>Het begint bij jou.</em></h2>
+
+    <p>Niet als verwijt — als bevrijding.</p>
+    <p>De meeste manifesteerders richten zich op de <em>persoon</em>. Ze sturen energie naar hun SP, twinflame of soulmate. Ze visualiseren diens gezicht. Ze wachten tot het universum hen naar ze toe stuurt.</p>
+    <p>Maar het universum reageert niet op wie jij wil. <strong>Het reageert op wie jij bent.</strong> Op de frequentie die jij uitzendt — de innerlijke staat van waaruit jij elke dag opereert.</p>
+    <p>En zo lang jij opereert vanuit verlangen, registreert het universum dat jij het niet hebt. En geeft dat terug. Elke keer weer.</p>
+
+    <div class="gold-quote">
+      "Verlangen is de frequentie van gemis.<br/>
+      En het universum levert altijd<br/>
+      wat jij uitzendt."
+    </div>
+
+    <p>Dit boek gaat je laten zien hoe je overschakelt van verlangen naar <em>hebben</em>. Van wachten naar zijn. Van hopen naar weten.</p>
+    <p>Niet met een nieuwe techniek. Niet met een nieuw ritueel. <strong>Met een fundamentele verschuiving in wie jij bent.</strong></p>
+  </section>
+
+  <!-- ══ TESTIMONIAL 1 (dynamisch) ══ -->
+  <section class="reveal" style="padding-top:0; padding-bottom:2rem;">
+    <div class="testimonial-block" id="dynamicTestimonial">
+      <p class="testimonial-text" id="dynText"></p>
+      <p class="testimonial-attr" id="dynAttr"></p>
+    </div>
+  </section>
+
+
+  <!-- ══ WAT JE KRIJGT ══ -->
+  <section class="reveal" style="background:linear-gradient(180deg,transparent,rgba(25,8,15,0.4),transparent); border-top:1px solid rgba(201,168,76,0.08); border-bottom:1px solid rgba(201,168,76,0.08);">
+    <p class="section-kicker">Wat je krijgt</p>
+    <h2>Zeven hoofdstukken.<br/><em>Eén verschuiving.</em></h2>
+    <ul class="wat-lijst">
+      <li><div class="wat-dot"></div><div><strong>De Oude Frequentie</strong>Ontdek welke innerlijke blokkade jou al jaren van je twinflame, soulmate of SP afhoudt — en hoe je die herkent voordat die weer toeslaat.</div></li>
+      <li><div class="wat-dot"></div><div><strong>De Twee Stoelen</strong>Waarom alles wat jij doet vanuit verlangen de verbinding verder weg duwt — en hoe je overschakelt naar de stoel van hebben.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Wat Jij Werkelijk Zoekt</strong>Je wil die persoon niet. Je wil wat deze verbinding jou belooft. Als je dit begrijpt, verandert alles.</div></li>
+      <li><div class="wat-dot"></div><div><strong>De Techniek</strong>De inbeeldingsmethode die jouw brein overtuigt dat de verbinding al bestaat — zonder meditatie, zonder rituelen.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Het Geheim Van Loslaten</strong>Wat loslaten echt betekent — en hoe je weet dat je het echt gedaan hebt.</div></li>
+      <li><div class="wat-dot"></div><div><strong>De Spiegel Van Je Ziel</strong>Je twinflame laat je zien wie jij werkelijk bent. Dit hoofdstuk laat je zien hoe je die spiegel gebruikt om de afstand te verkleinen.</div></li>
+      <li><div class="wat-dot"></div><div><strong>Frequentie Eerst, Actie Daarna</strong>Hoe dezelfde energie twee compleet verschillende uitkomsten heeft — afhankelijk van vanwaar jij uitzendt.</div></li>
+    </ul>
+    <div class="value-stack">
+      <div class="value-stack-title">Totale waarde van dit pakket</div>
+      <div class="value-row"><span class="value-label">7-hoofdstukken manifestatiesysteem (PDF)</span><span class="value-price">€ 47</span></div>
+      <div class="value-row"><span class="value-label">De Twee Stoelen — frequentie-oefening</span><span class="value-price">€ 19</span></div>
+      <div class="value-row"><span class="value-label">De Techniek — stap-voor-stap inbeelding</span><span class="value-price">€ 27</span></div>
+      <div class="value-row"><span class="value-label">Het Geheim Van Loslaten — praktische gids</span><span class="value-price">€ 17</span></div>
+      <div class="value-total-row">
+        <span class="value-total-label">Jij betaalt vandaag</span>
+        <span class="value-total-price" style="color:var(--gold2);">€ 15,15</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VOOR WIE ══ -->
+  <section class="reveal">
+    <p class="section-kicker">Voor wie</p>
+    <h2>Dit boek is voor jou als<br/><em>je klaar bent om te stoppen met wachten.</em></h2>
+
+    <p>Niet voor wie nog een nieuwe techniek wil proberen. Niet voor wie op zoek is naar een ritueel dat het voor hen regelt.</p>
+    <p>Dit boek is voor wie <em>echt</em> klaar is. Voor wie begrijpt dat de verbinding niet begint bij de ander — maar bij de frequentie die jij uitzendt. Voor wie niet meer wil wachten — en bereid is daarvoor iets fundamenteels te veranderen.</p>
+    <p>Het systeem in dit boek werkt. Maar alleen als jij beslist dat jij de manifestatie bent. Dat besluit maakt jij. Vandaag.</p>
+
+    <div class="gold-quote">
+      "Jij bent niet wat je zoekt.<br/>
+      Jij bent wat je uitzendt."
+    </div>
+  </section>
+
+  <!-- ══ MEER TESTIMONIALS ══ -->
+  <section class="reveal" style="padding-top:0;">
+    <p class="section-kicker">Wat lezers zeggen</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Voor het eerst voel ik dat ik niet meer wacht. Ik ben degene die de verbinding al heeft. Dat is zo anders."</p>
+        <div class="attr">— Noor, 29</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Ik dacht dat ik meer technieken nodig had. Dit boek liet me zien dat ik een andere frequentie nodig had."</p>
+        <div class="attr">— Lotte, 34</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Na het lezen heb ik mijn SP drie weken losgelaten. Hij belde mij. Ik huilde van opluchting."</p>
+        <div class="attr">— Manon, 26</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars-row">★★★★★</div>
+        <p>"Het stuk over de twee stoelen veranderde letterlijk hoe ik mijn dag begin. Geen rituelen meer — gewoon zijn."</p>
+        <div class="attr">— Fleur, 31</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUTEUR ══ -->
+  <section class="reveal">
+    <div class="auteur-block">
+      <p class="auteur-naam" style="color:var(--rose2); font-size:clamp(1.4rem,4vw,2rem); font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.05em;">Met liefde van Jo</p>
+      <p><em>"Ik heb dit boek geschreven voor jou. Niet vanuit theorie — vanuit alles wat ik zelf heb doorleefd en begrepen. De weg naar je twinflame, soulmate of speciaal persoon gaat altijd door jezelf. Dat is geen straf. Dat is het mooiste cadeau."</em></p>
+      <div style="height:1rem;"></div>
+      <p>"Jij verdient de liefde die bij jou hoort. Ik geloof dat met heel mijn hart. Dit boek is mijn manier om jou een stukje dichter bij die verbinding te brengen — met liefde, met zorg, met alles wat ik in me heb."</p>
+    </div>
+  </section>
+
+  <!-- ══ TWEEDE PULLQUOTE ══ -->
+  <section class="reveal" style="padding-top:0; padding-bottom:0;">
+    <div class="pullquote">
+      De liefde die jij zoekt<br/>
+      heeft jou altijd al gezocht.<br/>
+      <span style="font-size:0.85em; color:var(--dim); font-style:normal;">— Jo</span>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-section reveal" id="ctaSection">
+    <div class="gold-rule wide"></div>
+    <div style="height:2rem;"></div>
+
+    <!-- Elegante zwaantjes + infinity animatie -->
+    <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:1.5rem;">
+      <canvas id="ctaSwans" width="320" height="72" style="display:block;"></canvas>
+      <canvas id="ctaFlame" width="420" height="220" style="display:block;margin-top:-4px;"></canvas>
+    </div>
+
+    <span class="prijs-badge">Introductieprijs</span>
+    <div class="prijs-was">Normaal € 110 waarde</div>
+    <div class="prijs"><sup>€</sup>15,15</div>
+    <p class="prijs-sub">eenmalig · direct downloadbaar · PDF</p>
+    <div class="prijs-saving">Jij bespaart € 94,85 — 86% korting</div>
+
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem,2.5vw,1.3rem); color:var(--rose2); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      Voor slechts € 15,15 staat de verbinding<br/>die jij verdient binnen handbereik.
+    </p>
+
+    <a href="https://payment-links.mollie.com/nl/payment/NKWYNAhVbLN5dL4NovKdt" class="btn-koop" id="mainCta">
+      Ja, ik wil dit boek
+      <span class="btn-koop-sub">Direct downloaden na betaling · Veilig via Mollie</span>
+    </a>
+
+    <!-- ══ ORDER BUMP ══ -->
+    <div id="orderBump" style="
+      max-width:480px; margin:1.8rem auto 0;
+      border:2px dashed rgba(201,168,76,0.45);
+      background:rgba(18,8,13,0.85);
+      padding:1.6rem 1.8rem;
+      text-align:left;
+      position:relative;
+      cursor:pointer;
+      transition: border-color 0.3s, background 0.3s;
+    " onclick="toggleBump()" onmouseenter="this.style.borderColor='rgba(201,168,76,0.75)'" onmouseleave="this.style.borderColor=document.getElementById('bumpCheck').checked?'rgba(201,168,76,0.75)':'rgba(201,168,76,0.45)'">
+
+      <!-- Tag label -->
+      <div style="
+        position:absolute; top:-1px; left:1.4rem;
+        transform:translateY(-50%);
+        background:linear-gradient(135deg,var(--gold2),var(--gold));
+        color:var(--bg); font-family:'Cinzel',serif;
+        font-size:0.55rem; letter-spacing:0.35em; text-transform:uppercase;
+        padding:0.28rem 0.9rem;
+      ">Ja, voeg toe aan mijn bestelling</div>
+
+      <div style="display:flex; align-items:flex-start; gap:1.1rem;">
+        <!-- Checkbox -->
+        <div id="bumpCheckBox" style="
+          width:22px; height:22px; border:1.5px solid rgba(201,168,76,0.5);
+          border-radius:3px; flex-shrink:0; margin-top:0.15rem;
+          display:flex; align-items:center; justify-content:center;
+          transition:background 0.2s, border-color 0.2s;
+          background:transparent;
+        ">
+          <svg id="bumpTick" width="13" height="13" viewBox="0 0 13 13" fill="none" style="opacity:0;transition:opacity 0.2s;">
+            <polyline points="2,7 5.5,10.5 11,3" stroke="#06080F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <input type="checkbox" id="bumpCheck" style="display:none;" onchange="updateBumpVisual()"/>
+
+        <div style="flex:1;">
+          <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem; opacity:0.8;">Compleet pakket — speciale aanbieding</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(1.1rem,2.5vw,1.3rem); color:var(--cream); line-height:1.3; margin-bottom:0.6rem;">
+            + <em style="color:#7AAFD4;">Je Bent Niet Zwak. Je Bent Je Kracht Vergeten.</em>
+          </div>
+          <p style="font-size:0.9rem; color:var(--muted); line-height:1.6; margin-bottom:0.9rem;">
+            De complementerende gids die jouw nieuwe identiteit verankert — zodat je niet alleen de liefde aantrekt, maar ook de innerlijke kracht hebt om haar vast te houden. Liefde + identiteit: het complete fundament.
+          </p>
+          <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+            <div>
+              <span style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:var(--dim); text-decoration:line-through;">€ 15,15 + € 15,15 = € 30,30</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.3rem;">
+              <span style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; color:var(--gold2); line-height:1;">€ 25,25</span>
+              <span style="font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.2em; color:var(--gold); opacity:0.7; text-transform:uppercase;">totaal</span>
+            </div>
+            <div style="background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); color:var(--gold); font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.2em; text-transform:uppercase; padding:0.25rem 0.7rem;">Bespaar € 5,05</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic price display -->
+    <div id="priceDisplay" style="margin-top:1.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:var(--dim); text-align:center; min-height:1.4rem; transition:opacity 0.3s;"></div>
+
+    <div class="trust-icons">
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Beveiligde betaling
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Direct toegang
+      </div>
+      <div class="trust-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Persoonlijk support
+      </div>
+    </div>
+
+    <div style="height:2rem;"></div>
+
+    <div class="garantie">
+      <div class="garantie-icon">✨</div>
+      <p>
+        <strong>De verbinding is al van jou</strong>
+        Dit boek verandert niet wat je doet. Het verandert wie je bent als je manifesteert. En dat maakt het verschil tussen blijven wachten en eindelijk ontvangen.
+      </p>
+    </div>
+
+    <div style="height:2rem;"></div>
+    <div class="gold-rule full"></div>
+    <div style="height:2rem;"></div>
+    <p style="font-size:0.9rem; color:var(--dim); font-style:italic; max-width:480px; margin:0 auto;">
+      "Jij bent de manifestatie.<br/>De relatie is het gevolg."
+    </p>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="reveal" style="border-top:1px solid rgba(201,168,76,0.08);">
+    <p class="section-kicker">Veelgestelde vragen</p>
+    <h2 style="font-size:clamp(1.4rem,3.5vw,2rem); margin-bottom:2rem;">Alles wat je wilt weten</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is dit weer een manifestatieboek met dezelfde technieken? <span class="chevron">▾</span></button>
+      <div class="faq-a">Nee. De meeste manifestatieboeken geven je nieuwe rituelen — 369 methodes, moon water, scripting. Dit boek laat je zien waarom die technieken tijdelijk werken maar je frequentie niet veranderen. Dat is het enige wat telt.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Werkt dit ook als mijn SP of twinflame in een andere relatie zit? <span class="chevron">▾</span></button>
+      <div class="faq-a">Ja. Dit boek gaat niet over de ander — het gaat over jouw frequentie. Wat de ander doet of heeft, is irrelevant voor wat jij uitzendt. Jouw werk is intern. De externe werkelijkheid volgt altijd.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Hoe snel ontvang ik het boek? <span class="chevron">▾</span></button>
+      <div class="faq-a">Direct na betaling ontvang je een downloadlink via e-mail. Binnen 5 minuten lees je de eerste pagina.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Hoe lang duurt het om te lezen? <span class="chevron">▾</span></button>
+      <div class="faq-a">De meeste lezers lezen het in één avond — 1,5 tot 2 uur. De verschuiving begint tijdens het lezen, niet erna.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is de betaling veilig? <span class="chevron">▾</span></button>
+      <div class="faq-a">Ja. Betaling verloopt via Mollie — een van de meest vertrouwde betalingsproviders van Nederland. Betalen via Mollie is snel, veilig en vertrouwd.</div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="ornament">· · ·</div>
+    <div style="height:1.5rem;"></div>
+    <p>
+      © 2026 Met liefde van Jo<br/>
+      <span style="font-size:0.72rem; opacity:0.6;">
+        Na betaling ontvang je direct toegang tot de download via e-mail.<br/>
+        Bij vragen: contact via TikTok <a href="https://www.tiktok.com/@jolanda_koen">@jolanda_koen</a>
+      </span>
+    </p>
+  </footer>
+
+</div><!-- .page -->
+
+<!-- ══ STICKY MOBILE CTA ══ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://payment-links.mollie.com/nl/payment/NKWYNAhVbLN5dL4NovKdt" class="btn-koop">Ja, ik wil dit boek — € 15,15</a>
+</div>
+
+<script>
+// ── STARS ──
+const starsEl = document.getElementById('stars');
+[{x:4,y:6,s:1.1,dur:3.2,delay:0},{x:11,y:14,s:0.8,dur:4.1,delay:0.8},{x:19,y:4,s:1.3,dur:2.8,delay:1.5},
+ {x:28,y:9,s:0.9,dur:3.6,delay:0.3},{x:35,y:2,s:1.0,dur:4.5,delay:2.1},{x:44,y:7,s:1.2,dur:3.0,delay:0.6},
+ {x:52,y:3,s:0.7,dur:3.8,delay:1.2},{x:61,y:11,s:1.1,dur:2.6,delay:0.9},{x:70,y:5,s:1.3,dur:4.2,delay:1.8},
+ {x:78,y:8,s:0.8,dur:3.4,delay:0.4},{x:86,y:2,s:1.0,dur:2.9,delay:2.4},{x:93,y:12,s:1.2,dur:3.7,delay:1.0},
+ {x:7,y:25,s:0.9,dur:4.0,delay:1.6},{x:22,y:30,s:1.1,dur:3.3,delay:0.7},{x:48,y:22,s:0.8,dur:2.7,delay:2.0},
+ {x:75,y:28,s:1.2,dur:4.4,delay:0.2},{x:90,y:20,s:1.0,dur:3.1,delay:1.4},{x:3,y:45,s:0.9,dur:3.9,delay:0.5},
+ {x:96,y:50,s:1.1,dur:2.5,delay:1.9},{x:15,y:60,s:0.8,dur:4.3,delay:0.1},{x:82,y:65,s:1.2,dur:3.5,delay:2.2},
+ {x:40,y:75,s:0.7,dur:2.8,delay:1.1},{x:60,y:80,s:1.0,dur:4.1,delay:0.8},{x:25,y:88,s:1.1,dur:3.2,delay:1.7},
+ {x:70,y:92,s:0.9,dur:3.6,delay:0.3}
+].forEach(d => {
+  const el = document.createElement('div');
+  el.className = 'star';
+  el.style.cssText = `left:${d.x}%;top:${d.y}%;width:${d.s*2}px;height:${d.s*2}px;--dur:${d.dur}s;--delay:${d.delay}s;--min-op:0.15;--max-op:0.65;animation-delay:${d.delay}s;`;
+  starsEl.appendChild(el);
+});
+
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+document.querySelector('.hero').classList.add('visible');
+
+// ── ORDER BUMP ──
+const LINK_SINGLE = 'https://payment-links.mollie.com/nl/payment/NKWYNAhVbLN5dL4NovKdt';          // €15,15 enkel
+const LINK_BUNDLE  = 'https://payment-links.mollie.com/payment/UGi8WKssHDBvLjz3KwBad';   // €25,25 pakket
+
+function toggleBump(){
+  const cb = document.getElementById('bumpCheck');
+  cb.checked = !cb.checked;
+  updateBumpVisual();
+}
+
+function updateBumpVisual(){
+  const cb       = document.getElementById('bumpCheck');
+  const box      = document.getElementById('bumpCheckBox');
+  const tick     = document.getElementById('bumpTick');
+  const display  = document.getElementById('priceDisplay');
+  const bump     = document.getElementById('orderBump');
+  const btns     = document.querySelectorAll('.btn-koop');
+
+  if(cb.checked){
+    box.style.background    = 'linear-gradient(135deg,var(--gold2),var(--gold))';
+    box.style.borderColor   = 'var(--gold)';
+    tick.style.opacity      = '1';
+    bump.style.borderColor  = 'rgba(201,168,76,0.75)';
+    bump.style.background   = 'rgba(20,25,50,0.95)';
+    display.textContent     = '✓ Totaal: € 25,25 — beide boeken · direct downloadbaar';
+    display.style.color     = 'var(--gold)';
+    btns.forEach(b => { b.href = LINK_BUNDLE; b.querySelector('.btn-koop-sub') && (b.querySelector('.btn-koop-sub').textContent = 'Beide boeken · Direct downloaden · Veilig via Mollie'); });
+  } else {
+    box.style.background    = 'transparent';
+    box.style.borderColor   = 'rgba(201,168,76,0.5)';
+    tick.style.opacity      = '0';
+    bump.style.borderColor  = 'rgba(201,168,76,0.45)';
+    bump.style.background   = 'rgba(18,8,13,0.85)';
+    display.textContent     = '';
+    btns.forEach(b => { b.href = LINK_SINGLE; b.querySelector('.btn-koop-sub') && (b.querySelector('.btn-koop-sub').textContent = 'Direct downloaden na betaling · Veilig via Mollie'); });
+  }
+}
+// 75% vrouwen, 25% mannen — allemaal Nederlandse namen
+const toastWomen = [
+  'Marieke','Lisa','Emma','Sanne','Lotte','Fleur','Anouk','Noor','Iris','Vera',
+  'Manon','Silke','Fenna','Hanna','Julie','Elise','Roos','Nathalie','Bo','Amber',
+  'Maud','Laura','Sophie','Lena','Femke','Chantal','Anne','Merel','Carolien','Inge',
+  'Demi','Lieke','Britt','Naomi','Tamara','Cindy','Ellen','Rianne','Wendy','Josine',
+  'Deborah','Miriam','Esther','Anke','Bianca','Nienke','Renate','Maaike','Kim','Eline',
+];
+const toastMen = [
+  'Daan','Rens','Niels','Joost','Bas','Tim','Ruben','Jelle','Koen','Lars',
+  'Rick','Wouter','Bram','Pieter','Max','Thijs','Jasper','Stijn','Luuk','Finn',
+];
+const toastCities = [
+  'Amsterdam','Rotterdam','Utrecht','Den Haag','Eindhoven','Groningen',
+  'Tilburg','Almere','Breda','Nijmegen','Enschede','Haarlem',
+  'Arnhem','Zaandam','Amersfoort','Apeldoorn','\'s-Hertogenbosch','Hoofddorp',
+  'Maastricht','Leiden','Dordrecht','Zoetermeer','Zwolle','Deventer',
+  'Delft','Alkmaar','Leeuwarden','Venlo','Hilversum','Ede',
+  'Heerlen','Purmerend','Roosendaal','Spijkenisse','Gouda','Emmen',
+];
+const toastTimes = [
+  'zojuist','net','1 minuut geleden','2 minuten geleden','3 minuten geleden',
+  '5 minuten geleden','7 minuten geleden','10 minuten geleden','12 minuten geleden',
+  '15 minuten geleden','18 minuten geleden','22 minuten geleden','28 minuten geleden',
+  '35 minuten geleden','42 minuten geleden','51 minuten geleden','1 uur geleden',
+];
+
+const toast    = document.getElementById('socialToast');
+const toastTxt = document.getElementById('toastText');
+const toastTim = document.getElementById('toastTime');
+const toastAv  = document.getElementById('toastAvatar');
+
+// Shuffle helper
+function shuffle(arr){ return [...arr].sort(()=>Math.random()-0.5); }
+
+// Build a 40-entry queue — 75% vrouwen, 25% mannen
+function buildQueue(){
+  const cities = shuffle(toastCities);
+  const times  = shuffle(toastTimes);
+  // Build weighted name pool: 3 women per 1 man
+  const pool = [];
+  const sw = shuffle(toastWomen), sm = shuffle(toastMen);
+  for(let i=0; i<40; i++){
+    const useWoman = (i % 4) !== 3; // 3 out of 4 = 75%
+    pool.push(useWoman ? sw[i % sw.length] : sm[i % sm.length]);
+  }
+  return Array.from({length:40}, (_,i) => ({
+    name:    pool[i],
+    city:    cities[i % cities.length],
+    time:    times[i % times.length],
+    initial: pool[i][0],
+  }));
+}
+
+let queue = buildQueue(), qIdx = 0, toastShown = false;
+
+function showToast(){
+  if(qIdx >= queue.length) queue = buildQueue(), qIdx = 0; // refill if needed
+  const d = queue[qIdx++];
+  toastAv.textContent  = d.initial;
+  toastTxt.textContent = `${d.name} uit ${d.city} heeft dit net aangeschaft.`;
+  toastTim.textContent = d.time;
+  toast.style.transform = 'translateX(0)';
+  setTimeout(() => { toast.style.transform = 'translateX(-120%)'; }, 4500);
+}
+
+// Schedule: first after ~15s, then every 40–65s for a full 30 min
+function scheduleNext(delay){
+  setTimeout(() => {
+    showToast();
+    const next = 40000 + Math.random() * 25000; // 40–65s between toasts
+    scheduleNext(next);
+  }, delay);
+}
+
+// Trigger first toast once user has scrolled into the content
+window.addEventListener('scroll', function onFirstScroll(){
+  if(window.scrollY > 300){
+    toastShown = true;
+    window.removeEventListener('scroll', onFirstScroll);
+    setTimeout(() => {
+      showToast();
+      scheduleNext(40000 + Math.random() * 25000);
+    }, 1500);
+  }
+}, { passive: true });
+
+// ── READER COUNT (social proof animation) ──
+let count = 984;
+setInterval(() => {
+  if(Math.random() < 0.35){ count++; document.getElementById('readerCount').textContent = count.toLocaleString('nl-NL'); }
+}, 8000);
+
+// ── STICKY CTA (hide when real CTA visible) ──
+const stickyCta = document.getElementById('stickyCta');
+const ctaSection = document.getElementById('ctaSection');
+const ctaObs = new IntersectionObserver(entries => {
+  stickyCta.style.display = entries[0].isIntersecting ? 'none' : '';
+}, { threshold: 0.2 });
+ctaObs.observe(ctaSection);
+
+// ── FAQ ──
+function toggleFaq(btn){
+  const ans = btn.nextElementSibling;
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a=>{ a.classList.remove('open'); a.previousElementSibling.classList.remove('open'); });
+  if(!isOpen){ ans.classList.add('open'); btn.classList.add('open'); }
+}
+
+// ── DYNAMISCHE TESTIMONIALS ──
+const dynTestimonials = [
+  { text: "Ik heb dit boek op een avond gelezen en de volgende ochtend had hij me al een bericht gestuurd. Toeval? Ik geloof van niet.", name: "Marieke", age: 31 },
+  { text: "Voor het eerst voel ik dat ik niet meer wacht. Die verschuiving begon tijdens het lezen, niet erna.", name: "Noor", age: 27 },
+  { text: "Het stuk over de twee stoelen was een klap in mijn gezicht — maar de beste die ik ooit heb gehad.", name: "Lotte", age: 34 },
+  { text: "Na al die tijd begreep ik eindelijk wat ik eigenlijk deed. Dit boek zette alles op zijn kop — nog tijdens het lezen.", name: "Fleur", age: 29 },
+  { text: "Ik stuurde hem na het lezen geen berichtje meer. De volgende ochtend was er al een van hem. Dit werkt.", name: "Sanne", age: 33 },
+  { text: "De frequentie-uitleg is zo helder. Ik heb dit aan mijn zus doorgegeven — ze heeft het dezelfde avond nog besteld.", name: "Anouk", age: 38 },
+  { text: "Twee uur gelezen, daarna in slaap gevallen met een gevoel van rust. De volgende ochtend had ik drie berichten van hem.", name: "Manon", age: 26 },
+  { text: "Ik dacht dat loslaten betekende opgeven. Na het lezen begrijp ik het verschil. Compleet anders dan alles wat ik eerder las.", name: "Emma", age: 30 },
+  { text: "Ik had verwacht weer een boek te lezen dat je even raakt en dan vergeet. Dit heeft me de hele nacht beziggehouden.", name: "Iris", age: 42 },
+  { text: "Het hoofdstuk over 'wat jij werkelijk zoekt' heeft me aan het huilen gebracht. En daarna bevrijd.", name: "Vera", age: 35 },
+  { text: "Ik heb zijn naam na het lezen niet meer opgezocht. Dat is voor mij al een wonder.", name: "Silke", age: 28 },
+  { text: "De ochtend na het lezen was anders. Rustiger. Completer. En ja — hij appte.", name: "Fenna", age: 31 },
+  { text: "Dit boek heeft me diezelfde avond nog laten inzien dat verlangen de verbinding wegduwt. Dat inzicht alleen al was elke cent waard.", name: "Roos", age: 37 },
+  { text: "Ik heb zoveel manifestatieboeken gelezen. Dit voelde direct anders — al op de eerste pagina.", name: "Julie", age: 32 },
+  { text: "Na het lezen voelde ik me niet langer iemand die wacht. Ik voelde me iemand die heeft. Zo bijzonder.", name: "Amber", age: 25 },
+  { text: "Na het lezen opeens die rust. Geen drang meer om iets te doen of te sturen. Gewoon weten. De volgende ochtend had hij contact opgenomen.", name: "Maud", age: 29 },
+  { text: "Het boek is kort maar elk woord telt. Ik heb het in één nacht uitgelezen — kon niet stoppen.", name: "Laura", age: 36 },
+  { text: "Voor het eerst begrijp ik waarom al mijn rituelen niets uithaalden. De frequentie was gewoon verkeerd.", name: "Sophie", age: 33 },
+  { text: "Ik heb het uitgelezen en ben direct anders gaan slapen. Geen gedachten meer aan hem. Alleen rust. Dat was nieuw.", name: "Lena", age: 30 },
+  { text: "Jo heeft iets geschreven dat je niet vergeet. Ik merkte het al terwijl ik nog aan het lezen was.", name: "Femke", age: 44 },
+  { text: "Het gedeelte over loslaten snapte ik eindelijk pas hier. Niet als opgeven, maar als vertrouwen. Dát is het.", name: "Chantal", age: 39 },
+  { text: "Ik stuurde mijn vriendin een screenshot van pagina vier. Ze heeft het dezelfde avond nog besteld.", name: "Anne", age: 27 },
+  { text: "Na het lezen heb ik mijn affirmatielijst weggegooid. Niet omdat het niet werkt — maar omdat ik nu weet wat wél werkt.", name: "Merel", age: 31 },
+  { text: "Na het lezen besefte ik dat ik al die tijd aan het duwen was terwijl ik eigenlijk gewoon mocht zijn. Dat heeft me wakker geschud.", name: "Elise", age: 34 },
+  { text: "Ik heb diezelfde avond geslapen als een baby. Geen piekeren meer. Gewoon weten.", name: "Britt", age: 28 },
+  { text: "Het raakte me diep dat ik niet naar hem toe hoef te gaan — dat de verbinding naar mij toekomt als ik op de juiste frequentie zit.", name: "Demi", age: 32 },
+  { text: "Ik heb zoveel manifestatieboeken gelezen en dit is het eerste waarbij ik dacht: dit is precies wat ik nodig had. Nog diezelfde avond.", name: "Nathalie", age: 41 },
+  { text: "Twee uur lezen deed meer dan al het andere dat ik had geprobeerd. Dat besefte ik nog diezelfde avond.", name: "Kim", age: 36 },
+  { text: "Hij stuurde me een bericht de ochtend nadat ik het boek had uitgelezen. Jo had gelijk.", name: "Eline", age: 29 },
+  { text: "Ik had dit boek eerder nodig. Maar misschien was ik er toen nog niet klaar voor. Nu was ik het. En het werkte meteen.", name: "Rianne", age: 38 },
+];
+
+(function initDynTestimonial(){
+  const idx  = Math.floor(Math.random() * dynTestimonials.length);
+  const t    = dynTestimonials[idx];
+  const el   = document.getElementById('dynamicTestimonial');
+  const txt  = document.getElementById('dynText');
+  const attr = document.getElementById('dynAttr');
+  if(!el || !txt || !attr) return;
+  txt.textContent  = '\u201C' + t.text + '\u201D';
+  attr.textContent = `\u2014 ${t.name}, ${t.age} jaar \u00B7 binnen 24 uur na het lezen`;
+  // Cycle every 12 seconds with a fade
+  el.style.transition = 'opacity 0.6s ease';
+  let cur = idx;
+  setInterval(() => {
+    el.style.opacity = '0';
+    setTimeout(() => {
+      cur = (cur + 1) % dynTestimonials.length;
+      const nt = dynTestimonials[cur];
+      txt.textContent  = '\u201C' + nt.text + '\u201D';
+      attr.textContent = `\u2014 ${nt.name}, ${nt.age} jaar \u00B7 binnen 24 uur na het lezen`;
+      el.style.opacity = '1';
+    }, 600);
+  }, 12000);
+})();
+
+// ── ELEGANTE ZWANEN (canvas) ──
+(function initSwans(){
+  ['heroSwans','ctaSwans'].forEach(id => {
+    const c = document.getElementById(id);
+    if(!c) return;
+    const ctx = c.getContext('2d');
+    const W = c.width, H = c.height;
+    const CX = W / 2;  // 160
+
+    // Warm rose palette
+    const CREAM  = 'rgba(245,224,232,';
+    const ROSE   = 'rgba(212,120,154,';
+    const GOLD   = '#C9A84C';
+    const GOLD2  = '#EDD06A';
+    const SOFT   = 'rgba(232,160,188,';
+
+    let t = 0;
+
+    // ─ Draw one swan ─
+    // mirror: -1 = right-facing (left swan), +1 = left-facing (right swan)
+    function drawSwan(ctx, ox, oy, bobY, mirror, breathe){
+      ctx.save();
+      ctx.translate(ox, oy + bobY);
+
+      // ── Body: elegant egg shape ──
+      // Wide at back, tapering to front where neck meets
+      ctx.save();
+      ctx.scale(mirror, 1);
+      {
+        // Main body fill (soft glow from inside)
+        const bodyGrad = ctx.createRadialGradient(-6, 4, 2, -6, 4, 28);
+        bodyGrad.addColorStop(0,   CREAM + '0.18)');
+        bodyGrad.addColorStop(0.6, CREAM + '0.10)');
+        bodyGrad.addColorStop(1,   CREAM + '0.0)');
+        ctx.beginPath();
+        // Bezier body: front narrow, back wide and round
+        ctx.moveTo(18, 8);                             // neck-base front
+        ctx.bezierCurveTo(22, -2,  10, -14, -8, -12); // upper back curve
+        ctx.bezierCurveTo(-28, -10, -34, 0,  -32, 10);// back
+        ctx.bezierCurveTo(-30, 20, -18, 26,  -4, 24); // belly back
+        ctx.bezierCurveTo(10, 22,   20, 16,  18, 8);  // belly front
+        ctx.closePath();
+        ctx.fillStyle = bodyGrad;
+        ctx.fill();
+
+        // Body outline stroke — feathered, slightly variable width via shadow
+        ctx.shadowColor = CREAM + '0.4)';
+        ctx.shadowBlur = 6;
+        ctx.strokeStyle = CREAM + '0.72)';
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // ── Wing arch — raised above body ──
+        ctx.beginPath();
+        ctx.moveTo(-4, -12);
+        ctx.bezierCurveTo(-10, -28, -26, -32, -30, -20);
+        ctx.bezierCurveTo(-33, -10, -28, -4,  -22, -2);
+        ctx.strokeStyle = SOFT + '0.65)';
+        ctx.lineWidth = 1.1;
+        ctx.stroke();
+
+        // Wing inner fold
+        ctx.beginPath();
+        ctx.moveTo(-8, -12);
+        ctx.bezierCurveTo(-14, -24, -24, -26, -26, -18);
+        ctx.strokeStyle = ROSE + '0.35)';
+        ctx.lineWidth = 0.7;
+        ctx.stroke();
+
+        // Tail feathers — 3 elegant plumes
+        for(let i = 0; i < 3; i++){
+          const tx = -30 + i * 4;
+          const ty = 6 + i * 4;
+          ctx.beginPath();
+          ctx.moveTo(tx, ty);
+          ctx.bezierCurveTo(tx - 8, ty + 4, tx - 14, ty + 10, tx - 12, ty + 18);
+          ctx.strokeStyle = SOFT + (0.55 - i * 0.12) + ')';
+          ctx.lineWidth = 0.85 - i * 0.1;
+          ctx.stroke();
+        }
+
+        // Water reflection shimmer line
+        ctx.beginPath();
+        ctx.moveTo(-28, 24 + breathe * 1.5);
+        ctx.bezierCurveTo(-14, 28 + breathe, 4, 28 + breathe, 16, 24 + breathe * 1.5);
+        ctx.strokeStyle = ROSE + '0.18)';
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+      ctx.restore(); // unscale
+
+      // ── Neck — S-curve toward center, mirrored ──
+      // Neck tip (near center): neckTX, neckTY
+      // Neck base (body): neckBX, neckBY  
+      const neckBX = mirror * 18;
+      const neckBY = 6;
+      const cp1x   = mirror * 22;
+      const cp1y   = -10;
+      const cp2x   = mirror * 8;
+      const cp2y   = -36 + bobY * 0.3;
+      const neckTX = mirror * 3;
+      const neckTY = -44;
+
+      // Neck glow (thick)
+      ctx.beginPath();
+      ctx.moveTo(neckBX, neckBY);
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, neckTX, neckTY);
+      ctx.strokeStyle = CREAM + '0.14)';
+      ctx.lineWidth = 9;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+
+      // Neck main
+      ctx.beginPath();
+      ctx.moveTo(neckBX, neckBY);
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, neckTX, neckTY);
+      ctx.strokeStyle = CREAM + '0.78)';
+      ctx.lineWidth = 2.2;
+      ctx.stroke();
+
+      // Neck highlight
+      ctx.beginPath();
+      ctx.moveTo(neckBX + mirror * 0.5, neckBY - 2);
+      ctx.bezierCurveTo(cp1x + mirror * 0.5, cp1y - 2, cp2x + mirror * 0.5, cp2y - 2, neckTX + mirror * 0.5, neckTY - 2);
+      ctx.strokeStyle = CREAM + '0.30)';
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+
+      // ── Head — round, graceful ──
+      const hx = neckTX, hy = neckTY - 7;
+      ctx.beginPath();
+      ctx.arc(hx, hy, 7, 0, Math.PI * 2);
+      const hGrad = ctx.createRadialGradient(hx - mirror * 1, hy - 2, 1, hx, hy, 7);
+      hGrad.addColorStop(0,   CREAM + '0.85)');
+      hGrad.addColorStop(0.6, CREAM + '0.55)');
+      hGrad.addColorStop(1,   CREAM + '0.25)');
+      ctx.fillStyle = hGrad;
+      ctx.fill();
+      ctx.strokeStyle = CREAM + '0.60)';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Eye — small, dark, with gold highlight
+      const ex = hx + mirror * 2.5, ey = hy - 1.5;
+      ctx.beginPath();
+      ctx.arc(ex, ey, 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(20,8,12,0.85)';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(ex + mirror * 0.6, ey - 0.6, 0.6, 0, Math.PI * 2);
+      ctx.fillStyle = GOLD2;
+      ctx.fill();
+
+      // Beak — elegant, slightly open, angled toward center
+      const bkx = hx + mirror * 6.5, bky = hy + 1;
+      ctx.beginPath();
+      ctx.moveTo(hx + mirror * 5, hy);
+      ctx.bezierCurveTo(bkx + mirror * 2, bky - 2, bkx + mirror * 5, bky - 1, bkx + mirror * 6, bky + 1);
+      ctx.bezierCurveTo(bkx + mirror * 5, bky + 2, bkx + mirror * 2, bky + 2, hx + mirror * 5, hy + 2);
+      ctx.closePath();
+      ctx.fillStyle = GOLD;
+      ctx.globalAlpha = 0.80;
+      ctx.fill();
+      ctx.globalAlpha = 1.0;
+
+      ctx.restore();
+    }
+
+    // ─ Draw the golden heart between the two heads ─
+    function drawHeart(ctx, cx, cy, size, pulse){
+      const s = size * pulse;
+      ctx.save();
+      ctx.translate(cx, cy);
+
+      // Outer glow
+      const g = ctx.createRadialGradient(0, s * 0.2, 0, 0, s * 0.2, s * 2.2);
+      g.addColorStop(0,   'rgba(237,208,106,0.45)');
+      g.addColorStop(0.5, 'rgba(201,168,76,0.15)');
+      g.addColorStop(1,   'rgba(201,168,76,0)');
+      ctx.beginPath();
+      ctx.arc(0, s * 0.2, s * 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = g;
+      ctx.fill();
+
+      // Heart shape
+      ctx.beginPath();
+      ctx.moveTo(0, s * 0.35);
+      ctx.bezierCurveTo(-s * 0.1, s * 0.1, -s, -s * 0.2, -s, -s * 0.5);
+      ctx.bezierCurveTo(-s, -s,    0, -s * 0.9, 0,  -s * 0.5);
+      ctx.bezierCurveTo(0, -s * 0.9, s, -s,    s, -s * 0.5);
+      ctx.bezierCurveTo(s, -s * 0.2,  s * 0.1, s * 0.1, 0, s * 0.35);
+      ctx.closePath();
+      ctx.strokeStyle = GOLD2;
+      ctx.lineWidth   = 1.1;
+      ctx.globalAlpha = 0.80 * pulse;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+      ctx.restore();
+    }
+
+    function frame(ts){
+      ctx.clearRect(0, 0, W, H);
+      t = ts * 0.001;
+
+      // Two swans bob gently, slightly out of phase
+      const bobL =  Math.sin(t * 0.9) * 3.5;
+      const bobR =  Math.sin(t * 0.9 + 1.1) * 3.5;
+      const breathe = Math.sin(t * 1.1) * 1.2;
+      const heartPulse = 0.82 + 0.18 * Math.sin(t * 2.1);
+
+      // Left swan: mirror = -1 (faces right, toward center)
+      drawSwan(ctx, CX - 52, H - 10, bobL, -1, breathe);
+      // Right swan: mirror = +1 (faces left, toward center)
+      drawSwan(ctx, CX + 52, H - 10, bobR,  1, breathe);
+
+      // Heart between beak tips - position higher up since canvas is shorter
+      drawHeart(ctx, CX, 8, 9, heartPulse);
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+})();
+
+// ── INFINITY FLAME ANIMATION ──
+(function(){
+  // Runs on both canvases: hero + CTA
+  ['heroFlame','ctaFlame'].forEach(id => {
+    const canvas = document.getElementById(id);
+    if(!canvas) return;
+    const ctx  = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const CX = W/2, CY = H/2 + 10;
+
+    // ── Warm palette ──
+    const ROSE   = '#D4789A';
+    const ROSE2  = '#E8A0BC';
+    const AMBER  = '#E8952A';
+    const GOLD   = '#C9A84C';
+    const GOLD2  = '#EDD06A';
+    const CREAM  = '#F5EDE8';
+    const DEEP   = '#9B2A50';
+
+    // ── Infinity path (lemniscate of Bernoulli) ──
+    // Parametric: x = a·cos(t)/(1+sin²(t)),  y = a·sin(t)·cos(t)/(1+sin²(t))
+    const INF_A  = 90;   // horizontal half-width
+    const INF_B  = 44;   // vertical scale
+
+    function infPoint(t){
+      const denom = 1 + Math.sin(t)*Math.sin(t);
+      return {
+        x: CX + INF_A * Math.cos(t) / denom,
+        y: CY + INF_B * Math.sin(t) * Math.cos(t) / denom,
+      };
+    }
+
+    // ── Flame particles ──
+    const particles = [];
+    const PARTICLE_COUNT = 55;
+
+    class FlameParticle {
+      constructor(forceT){
+        this.reset(forceT !== undefined ? forceT : Math.random() * Math.PI * 2);
+      }
+      reset(t){
+        this.t      = t;
+        this.speed  = 0.008 + Math.random() * 0.010;
+        const pt    = infPoint(t);
+        this.x      = pt.x + (Math.random()-0.5)*6;
+        this.y      = pt.y + (Math.random()-0.5)*6;
+        this.vx     = (Math.random()-0.5)*0.5;
+        this.vy     = -(0.4 + Math.random()*0.9);
+        this.life   = 1;
+        this.decay  = 0.016 + Math.random()*0.022;
+        this.size   = 2.5 + Math.random()*4.5;
+        // Colour: cycle warm rose→amber→gold with life
+        this.hot    = Math.random() > 0.45; // amber/gold vs rose
+      }
+      update(){
+        this.t    += this.speed;
+        const pt  = infPoint(this.t);
+        // Blend towards path position (particles hug the loop)
+        this.x    += (pt.x - this.x)*0.035 + this.vx;
+        this.y    += (pt.y - this.y)*0.035 + this.vy;
+        this.vy   -= 0.012; // buoyancy
+        this.vx   *= 0.97;
+        this.life -= this.decay;
+        if(this.life <= 0) this.reset(this.t);
+      }
+      draw(){
+        const a = Math.max(0, this.life);
+        const s = this.size * (0.4 + a * 0.8);
+        // Inner core
+        ctx.save();
+        ctx.globalAlpha = a * 0.85;
+        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, s);
+        if(this.hot){
+          grad.addColorStop(0,  GOLD2);
+          grad.addColorStop(0.4, AMBER);
+          grad.addColorStop(1,  'rgba(232,149,42,0)');
+        } else {
+          grad.addColorStop(0,  CREAM);
+          grad.addColorStop(0.35, ROSE2);
+          grad.addColorStop(1,  'rgba(212,120,154,0)');
+        }
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, s, 0, Math.PI*2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Seed particles spread evenly around the loop
+    for(let i=0; i<PARTICLE_COUNT; i++){
+      particles.push(new FlameParticle(i / PARTICLE_COUNT * Math.PI * 2));
+    }
+
+    // ── Glow particles (slower, bigger, background halo) ──
+    const glows = [];
+    for(let i=0; i<18; i++){
+      const t = i / 18 * Math.PI * 2;
+      const pt = infPoint(t);
+      glows.push({ t, x: pt.x, y: pt.y, speed: 0.004+Math.random()*0.004, phase: Math.random()*Math.PI*2 });
+    }
+
+    // ── Draw the lemniscate path (glowing line) ──
+    function drawPath(time){
+      ctx.save();
+      ctx.lineWidth = 1.2;
+      ctx.strokeStyle = 'rgba(212,120,154,0.18)';
+      ctx.shadowColor = ROSE;
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      for(let i=0; i<=200; i++){
+        const t = (i/200)*Math.PI*2;
+        const p = infPoint(t);
+        i===0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // ── Draw centre crossing heart glow ──
+    function drawCentreGlow(time){
+      const pulse = 0.7 + 0.3*Math.sin(time*0.0025);
+      const g = ctx.createRadialGradient(CX, CY, 0, CX, CY, 32*pulse);
+      g.addColorStop(0,  `rgba(237,208,106,${0.55*pulse})`);
+      g.addColorStop(0.4,`rgba(232,149,42,${0.30*pulse})`);
+      g.addColorStop(1,  'rgba(201,168,76,0)');
+      ctx.save();
+      ctx.globalAlpha = 1;
+      ctx.beginPath();
+      ctx.arc(CX, CY, 32*pulse, 0, Math.PI*2);
+      ctx.fillStyle = g;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ── Draw a "travelling ember" that rides the loop ──
+    let emberT = 0;
+    function drawEmber(time){
+      emberT += 0.012;
+      const pt = infPoint(emberT);
+      const pulse = 0.8 + 0.2*Math.sin(time*0.003);
+      // Outer glow
+      const g = ctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,14*pulse);
+      g.addColorStop(0,  GOLD2);
+      g.addColorStop(0.5,AMBER);
+      g.addColorStop(1,  'rgba(232,149,42,0)');
+      ctx.save();
+      ctx.globalAlpha = 0.95;
+      ctx.beginPath();
+      ctx.arc(pt.x,pt.y,14*pulse,0,Math.PI*2);
+      ctx.fillStyle = g;
+      ctx.fill();
+      // Inner bright dot
+      ctx.beginPath();
+      ctx.arc(pt.x,pt.y,3,0,Math.PI*2);
+      ctx.fillStyle = CREAM;
+      ctx.globalAlpha = 1;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ── Draw ambient glow halos ──
+    function drawGlows(time){
+      glows.forEach(g => {
+        g.t += g.speed;
+        const pt = infPoint(g.t);
+        const pulse = 0.5 + 0.5*Math.sin(time*0.002 + g.phase);
+        const radius = 18 + 8*pulse;
+        const grad = ctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,radius);
+        grad.addColorStop(0,  `rgba(212,120,154,${0.18*pulse})`);
+        grad.addColorStop(1,  'rgba(212,120,154,0)');
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(pt.x,pt.y,radius,0,Math.PI*2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    // ── Main loop ──
+    function frame(ts){
+      ctx.clearRect(0,0,W,H);
+      drawGlows(ts);
+      drawPath(ts);
+      drawCentreGlow(ts);
+      particles.forEach(p => { p.update(); p.draw(); });
+      drawEmber(ts);
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+})();
+
+</script>
+</body>
+</html>
