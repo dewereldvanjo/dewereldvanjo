@@ -181,6 +181,33 @@
     display: inline-block;
   }
 
+  .live-top-row {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .live-notice {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: 'Cinzel', serif;
+    font-size: 9px; letter-spacing: 1.8px; text-transform: uppercase;
+    color: #ff6b6b;
+    background: rgba(255,80,80,0.1);
+    border: 1px solid rgba(255,80,80,0.45);
+    padding: 4px 10px;
+    font-weight: 600;
+  }
+  .tiktok-wa-btn {
+    display: inline-block; margin-top: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--cream); text-decoration: none;
+    padding: 10px 16px;
+    background: rgba(37,211,102,0.12);
+    border: 1px solid rgba(37,211,102,0.32);
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .tiktok-wa-btn:hover { background: rgba(37,211,102,0.2); border-color: rgba(37,211,102,0.55); }
+
   @media (max-width: 560px) {
     .tiktok-live-btn { flex-direction: column; align-items: flex-start; }
     .tiktok-live-right { text-align: left; }
@@ -498,17 +525,21 @@
   <!-- TIKTOK LIVE -->
   <div class="div-wrap tight"><div class="divider w300"></div></div>
 
-  <a href="https://payment-links.mollie.com/payment/VmoYq2jUVWzLNaQteinku" target="_blank" class="tiktok-live-btn">
+  <div class="tiktok-live-btn">
     <div class="tiktok-live-left">
-      <span class="tiktok-live-label">Nu beschikbaar</span>
+      <div class="live-top-row">
+        <span class="tiktok-live-label">Nu beschikbaar</span>
+        <span class="live-notice">🔴 Enkel tijdens Jo's TikTok Live</span>
+      </div>
       <span class="tiktok-live-title">✨ Live Reading</span>
       <span class="tiktok-live-sub">Live energetische reading met Jo · direct contact · jouw moment</span>
     </div>
     <div class="tiktok-live-right">
       <span class="tiktok-live-price">€ 11,11</span>
-      <span class="tiktok-live-cta">Boek een plek →</span>
+      <a href="https://payment-links.mollie.com/payment/VmoYq2jUVWzLNaQteinku" target="_blank" class="tiktok-live-cta">Boek een plek →</a>
+      <a href="https://wa.me/31621265920?text=Hoi%20Jo%2C%20ik%20wil%20graag%20meedoen%20aan%20jouw%20volgende%20live%20reading!%20%F0%9F%A4%8D" target="_blank" class="tiktok-wa-btn">📲 Zet mij op de lijst →</a>
     </div>
-  </a>
+  </div>
 
   <!-- GIDSEN -->
   <div class="div-wrap tight"><div class="divider w300"></div></div>
